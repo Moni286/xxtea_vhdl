@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums_tb_isim_beh.exe" -prj "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums_tb_beh.prj" "work.sums_tb" 

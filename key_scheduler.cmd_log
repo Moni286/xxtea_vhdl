@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_scheduler.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_scheduler.syr" 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_scheduler.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_scheduler.syr" 

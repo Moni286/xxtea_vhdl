@@ -1,0 +1,5 @@
+vhdl work "key_scheduler.vhd"
+vhdl work "key_RAM.vhd"
+vhdl work "sums.vhd"
+vhdl work "key_module.vhd"
+vhdl work "xxtea_encrypt.vhd"

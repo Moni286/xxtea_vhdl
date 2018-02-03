@@ -1,0 +1,3 @@
+vhdl work "key_scheduler.vhd"
+vhdl work "key_RAM.vhd"
+vhdl work "key_module.vhd"
