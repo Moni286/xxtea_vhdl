@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Reading design: xxtea_encrypt.prj
 
@@ -105,19 +105,19 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_scheduler.vhd" into library work
+Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_scheduler.vhd" into library work
 Parsing entity <key_scheduler>.
 Parsing architecture <Behavioral> of entity <key_scheduler>.
-Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_RAM.vhd" into library work
+Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_RAM.vhd" into library work
 Parsing entity <key_RAM>.
 Parsing architecture <Behavioral> of entity <key_ram>.
-Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\sums.vhd" into library work
+Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\sums.vhd" into library work
 Parsing entity <sums>.
 Parsing architecture <Behavioral> of entity <sums>.
-Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_module.vhd" into library work
+Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_module.vhd" into library work
 Parsing entity <key_module>.
 Parsing architecture <Behavioral> of entity <key_module>.
-Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd" into library work
+Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\xxtea_encrypt.vhd" into library work
 Parsing entity <xxtea_encrypt>.
 Parsing architecture <Behavioral> of entity <xxtea_encrypt>.
 
@@ -140,14 +140,14 @@ Elaborating entity <key_RAM> (architecture <Behavioral>) from library <work>.
 =========================================================================
 
 Synthesizing Unit <xxtea_encrypt>.
-    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd".
+    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\xxtea_encrypt.vhd".
 WARNING:Xst:647 - Input <pt> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <xxtea_encrypt> synthesized.
 
 Synthesizing Unit <sums>.
-    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\sums.vhd".
+    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\sums.vhd".
     Found 32-bit register for signal <sum_1s>.
     Found 32-bit register for signal <sum_2s>.
     Found 32-bit register for signal <sum_3s>.
@@ -161,13 +161,13 @@ Synthesizing Unit <sums>.
 Unit <sums> synthesized.
 
 Synthesizing Unit <key_module>.
-    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_module.vhd".
+    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_module.vhd".
     Summary:
 	no macro.
 Unit <key_module> synthesized.
 
 Synthesizing Unit <key_scheduler>.
-    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_scheduler.vhd".
+    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_scheduler.vhd".
 WARNING:Xst:647 - Input <sum_0<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum_0<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum_1<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -181,7 +181,7 @@ WARNING:Xst:647 - Input <sum_3<31:4>> is never used. This port will be preserved
 Unit <key_scheduler> synthesized.
 
 Synthesizing Unit <key_RAM>.
-    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_RAM.vhd".
+    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_RAM.vhd".
     Found 32-bit register for signal <key_s<1>>.
     Found 32-bit register for signal <key_s<2>>.
     Found 32-bit register for signal <key_s<3>>.
@@ -562,12 +562,12 @@ clk            |    2.915|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.51 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.56 secs
  
 --> 
 
-Total memory usage is 263068 kilobytes
+Total memory usage is 294440 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  122 (   0 filtered)
