@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.41 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.41 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: xxtea_encrypt.prj
 
@@ -105,19 +105,28 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_scheduler.vhd" into library work
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx_add.vhd" into library work
+Parsing entity <mx_add>.
+Parsing architecture <Behavioral> of entity <mx_add>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_scheduler.vhd" into library work
 Parsing entity <key_scheduler>.
 Parsing architecture <Behavioral> of entity <key_scheduler>.
-Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_RAM.vhd" into library work
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_RAM.vhd" into library work
 Parsing entity <key_RAM>.
 Parsing architecture <Behavioral> of entity <key_ram>.
-Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\sums.vhd" into library work
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\sums.vhd" into library work
 Parsing entity <sums>.
 Parsing architecture <Behavioral> of entity <sums>.
-Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_module.vhd" into library work
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\round_counter.vhd" into library work
+Parsing entity <round_counter>.
+Parsing architecture <Behavioral> of entity <round_counter>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx.vhd" into library work
+Parsing entity <feistel_net>.
+Parsing architecture <Behavioral> of entity <feistel_net>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_module.vhd" into library work
 Parsing entity <key_module>.
 Parsing architecture <Behavioral> of entity <key_module>.
-Parsing VHDL file "C:\Users\Lucas Futch\Documents\xxtea_vhdl\xxtea_encrypt.vhd" into library work
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd" into library work
 Parsing entity <xxtea_encrypt>.
 Parsing architecture <Behavioral> of entity <xxtea_encrypt>.
 
@@ -135,19 +144,26 @@ Elaborating entity <key_scheduler> (architecture <Behavioral>) from library <wor
 
 Elaborating entity <key_RAM> (architecture <Behavioral>) from library <work>.
 
+Elaborating entity <feistel_net> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <mx_add> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <round_counter> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd" Line 119: pt should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd" Line 121: next_state should be on the sensitivity list of the process
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <xxtea_encrypt>.
-    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\xxtea_encrypt.vhd".
-WARNING:Xst:647 - Input <pt> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd".
     Summary:
-	no macro.
+	inferred   1 Multiplexer(s).
 Unit <xxtea_encrypt> synthesized.
 
 Synthesizing Unit <sums>.
-    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\sums.vhd".
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\sums.vhd".
     Found 32-bit register for signal <sum_1s>.
     Found 32-bit register for signal <sum_2s>.
     Found 32-bit register for signal <sum_3s>.
@@ -161,13 +177,13 @@ Synthesizing Unit <sums>.
 Unit <sums> synthesized.
 
 Synthesizing Unit <key_module>.
-    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_module.vhd".
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_module.vhd".
     Summary:
 	no macro.
 Unit <key_module> synthesized.
 
 Synthesizing Unit <key_scheduler>.
-    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_scheduler.vhd".
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_scheduler.vhd".
 WARNING:Xst:647 - Input <sum_0<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum_0<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum_1<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -181,7 +197,7 @@ WARNING:Xst:647 - Input <sum_3<31:4>> is never used. This port will be preserved
 Unit <key_scheduler> synthesized.
 
 Synthesizing Unit <key_RAM>.
-    Related source file is "C:\Users\Lucas Futch\Documents\xxtea_vhdl\key_RAM.vhd".
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_RAM.vhd".
     Found 32-bit register for signal <key_s<1>>.
     Found 32-bit register for signal <key_s<2>>.
     Found 32-bit register for signal <key_s<3>>.
@@ -195,18 +211,55 @@ Synthesizing Unit <key_RAM>.
 	inferred   4 Multiplexer(s).
 Unit <key_RAM> synthesized.
 
+Synthesizing Unit <feistel_net>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx.vhd".
+    Found 128-bit register for signal <pl_reg1>.
+    Found 128-bit register for signal <pl_reg2>.
+    Found 128-bit register for signal <pl_reg3>.
+    Found 128-bit register for signal <pl_reg0>.
+    Summary:
+	inferred 512 D-type flip-flop(s).
+Unit <feistel_net> synthesized.
+
+Synthesizing Unit <mx_add>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx_add.vhd".
+    Found 32-bit adder for signal <x> created at line 62.
+    Found 32-bit adder for signal <a> created at line 63.
+    Found 32-bit adder for signal <sigma> created at line 67.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+Unit <mx_add> synthesized.
+
+Synthesizing Unit <round_counter>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\round_counter.vhd".
+    Found 5-bit register for signal <round_s>.
+    Found 2-bit register for signal <_n0026>.
+    Found 32-bit adder for signal <n0012> created at line 53.
+    Found 5-bit adder for signal <round_s[4]_GND_11_o_add_3_OUT> created at line 1241.
+    WARNING:Xst:2404 -  FFs/Latches <counter<31:2>> (without init value) have a constant value of 0 in block <round_counter>.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   7 D-type flip-flop(s).
+Unit <round_counter> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 16
  2-bit adder                                           : 1
- 32-bit adder                                          : 1
-# Registers                                            : 9
- 2-bit register                                        : 1
+ 32-bit adder                                          : 14
+ 5-bit adder                                           : 1
+# Registers                                            : 15
+ 128-bit register                                      : 4
+ 2-bit register                                        : 2
  32-bit register                                       : 8
-# Multiplexers                                         : 4
+ 5-bit register                                        : 1
+# Multiplexers                                         : 5
+ 128-bit 2-to-1 multiplexer                            : 1
  32-bit 4-to-1 multiplexer                             : 4
+# Xors                                                 : 20
+ 32-bit xor2                                           : 20
 
 =========================================================================
 
@@ -214,6 +267,11 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+
+Synthesizing (advanced) Unit <round_counter>.
+The following registers are absorbed into counter <round_s>: 1 register on signal <round_s>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <round_counter> synthesized (advanced).
 
 Synthesizing (advanced) Unit <sums>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
@@ -223,14 +281,18 @@ Unit <sums> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 1
- 32-bit adder                                          : 1
-# Counters                                             : 1
- 2-bit up counter                                      : 1
-# Registers                                            : 256
- Flip-Flops                                            : 256
-# Multiplexers                                         : 4
+# Adders/Subtractors                                   : 13
+ 32-bit adder                                          : 13
+# Counters                                             : 3
+ 2-bit up counter                                      : 2
+ 5-bit up counter                                      : 1
+# Registers                                            : 768
+ Flip-Flops                                            : 768
+# Multiplexers                                         : 5
+ 128-bit 2-to-1 multiplexer                            : 1
  32-bit 4-to-1 multiplexer                             : 4
+# Xors                                                 : 20
+ 32-bit xor2                                           : 20
 
 =========================================================================
 
@@ -238,137 +300,99 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 
+Optimizing unit <feistel_net> ...
+
 Optimizing unit <xxtea_encrypt> ...
 
 Optimizing unit <key_RAM> ...
 
-Optimizing unit <sums> ...
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_31> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_30> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_29> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_28> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_27> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_26> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_25> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_24> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_23> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_22> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_21> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_20> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_19> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_18> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_17> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_16> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_15> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_14> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_13> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_12> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_11> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_10> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_9> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_8> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_7> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_6> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_5> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_1s_4> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_31> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_30> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_29> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_28> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_27> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_26> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_25> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_24> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_23> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_22> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_21> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_20> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_19> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_18> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_17> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_16> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_15> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_14> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_13> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_12> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_11> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_10> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_9> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_8> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_7> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_6> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_5> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_0s_4> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_31> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_30> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_29> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_28> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_27> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_26> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_25> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_24> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_23> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_22> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_21> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_20> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_19> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_18> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_17> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_16> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_15> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_14> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_13> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_12> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_11> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_10> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_9> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_8> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_7> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_6> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_5> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_3s_4> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_31> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_30> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_29> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_28> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_27> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_26> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_25> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_24> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_23> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_22> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_21> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_20> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_19> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_18> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_17> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_16> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_15> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_14> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_13> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_12> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_11> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_10> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_9> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_8> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_7> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_6> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_5> of sequential type is unconnected in block <xxtea_encrypt>.
-WARNING:Xst:2677 - Node <sums_comp/sum_2s_4> of sequential type is unconnected in block <xxtea_encrypt>.
+Optimizing unit <mx_add> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block xxtea_encrypt, actual ratio is 2.
-FlipFlop sums_comp/sum_3s_2 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block xxtea_encrypt, actual ratio is 17.
 
 Final Macro Processing ...
+
+Processing Unit <xxtea_encrypt> :
+	Found 2-bit shift register for signal <feistel/pl_reg3_63>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_62>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_61>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_60>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_59>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_58>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_57>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_56>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_55>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_54>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_53>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_52>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_51>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_50>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_49>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_48>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_47>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_46>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_45>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_44>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_43>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_42>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_41>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_40>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_39>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_38>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_37>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_36>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_35>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_34>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_33>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_32>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_31>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_30>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_29>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_28>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_27>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_26>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_25>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_24>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_23>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_22>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_21>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_20>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_19>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_18>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_17>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_16>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_15>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_14>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_13>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_12>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_11>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_10>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_9>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_8>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_7>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_6>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_5>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_4>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_3>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_2>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_1>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_0>.
+	Found 2-bit shift register for signal <feistel/pl_reg1_127>.
+	Found 2-bit shift register for signal <feistel/pl_reg1_126>.
+	Found 2-bit shift register for signal <feistel/pl_reg1_102>.
+	Found 2-bit shift register for signal <feistel/pl_reg1_101>.
+Unit <xxtea_encrypt> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 147
- Flip-Flops                                            : 147
+# Registers                                            : 641
+ Flip-Flops                                            : 641
+# Shift Registers                                      : 68
+ 2-bit shift register                                  : 68
 
 =========================================================================
 
@@ -391,24 +415,28 @@ Top Level Output File Name         : xxtea_encrypt.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 149
+# BELS                             : 1792
 #      GND                         : 1
-#      INV                         : 4
-#      LUT1                        : 2
-#      LUT2                        : 3
-#      LUT3                        : 3
-#      LUT6                        : 128
-#      MUXCY                       : 3
+#      INV                         : 24
+#      LUT1                        : 12
+#      LUT2                        : 223
+#      LUT3                        : 236
+#      LUT4                        : 220
+#      LUT5                        : 69
+#      LUT6                        : 187
+#      MUXCY                       : 403
 #      VCC                         : 1
-#      XORCY                       : 4
-# FlipFlops/Latches                : 147
-#      FDE                         : 128
-#      FDR                         : 13
-#      FDRE                        : 6
+#      XORCY                       : 416
+# FlipFlops/Latches                : 709
+#      FDE                         : 572
+#      FDR                         : 98
+#      FDRE                        : 39
+# Shift Registers                  : 68
+#      SRLC16E                     : 68
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 258
-#      IBUF                        : 130
+# IO Buffers                       : 386
+#      IBUF                        : 258
 #      OBUF                        : 128
 
 Device utilization summary:
@@ -418,21 +446,22 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              19  out of  18224     0%  
- Number of Slice LUTs:                  140  out of   9112     1%  
-    Number used as Logic:               140  out of   9112     1%  
+ Number of Slice Registers:             709  out of  18224     3%  
+ Number of Slice LUTs:                 1039  out of   9112    11%  
+    Number used as Logic:               971  out of   9112    10%  
+    Number used as Memory:               68  out of   2176     3%  
+       Number used as SRL:               68
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    149
-   Number with an unused Flip Flop:     130  out of    149    87%  
-   Number with an unused LUT:             9  out of    149     6%  
-   Number of fully used LUT-FF pairs:    10  out of    149     6%  
-   Number of unique control sets:         5
+ Number of LUT Flip Flop pairs used:   1262
+   Number with an unused Flip Flop:     553  out of   1262    43%  
+   Number with an unused LUT:           223  out of   1262    17%  
+   Number of fully used LUT-FF pairs:   486  out of   1262    38%  
+   Number of unique control sets:         6
 
 IO Utilization: 
  Number of IOs:                         387
- Number of bonded IOBs:                 259  out of    232   111% (*) 
-    IOB Flip Flops/Latches:             128
+ Number of bonded IOBs:                 387  out of    232   166% (*) 
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -460,7 +489,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 147   |
+clk                                | BUFGP                  | 777   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -471,9 +500,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.915ns (Maximum Frequency: 343.024MHz)
-   Minimum input arrival time before clock: 3.983ns
-   Maximum output required time after clock: 6.380ns
+   Minimum period: 6.807ns (Maximum Frequency: 146.902MHz)
+   Minimum input arrival time before clock: 6.823ns
+   Maximum output required time after clock: 4.346ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -482,69 +511,99 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.915ns (frequency: 343.024MHz)
-  Total number of paths / destination ports: 41 / 25
+  Clock period: 6.807ns (frequency: 146.902MHz)
+  Total number of paths / destination ports: 507791 / 688
 -------------------------------------------------------------------------
-Delay:               2.915ns (Levels of Logic = 5)
-  Source:            sums_comp/sum_3s_0 (FF)
-  Destination:       sums_comp/sum_0s_2 (FF)
+Delay:               6.807ns (Levels of Logic = 36)
+  Source:            round_count/round_s_4 (FF)
+  Destination:       feistel/pl_reg0_31 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: sums_comp/sum_3s_0 to sums_comp/sum_0s_2
+  Data Path: round_count/round_s_4 to feistel/pl_reg0_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.525   0.681  sums_comp/sum_3s_0 (sums_comp/sum_3s_0)
-     INV:I->O              1   0.255   0.000  sums_comp/Madd_sum_3s[31]_PWR_5_o_add_1_OUT_lut<0>_INV_0 (sums_comp/Madd_sum_3s[31]_PWR_5_o_add_1_OUT_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  sums_comp/Madd_sum_3s[31]_PWR_5_o_add_1_OUT_cy<0> (sums_comp/Madd_sum_3s[31]_PWR_5_o_add_1_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  sums_comp/Madd_sum_3s[31]_PWR_5_o_add_1_OUT_cy<1> (sums_comp/Madd_sum_3s[31]_PWR_5_o_add_1_OUT_cy<1>)
-     XORCY:CI->O           1   0.206   0.682  sums_comp/Madd_sum_3s[31]_PWR_5_o_add_1_OUT_xor<2> (sums_comp/sum_3s[31]_PWR_5_o_add_1_OUT<2>)
-     LUT3:I2->O            1   0.254   0.000  sums_comp/sum_0s_2_dpot (sums_comp/sum_0s_2_dpot)
-     FDRE:D                    0.074          sums_comp/sum_0s_2
+     FDRE:C->Q             7   0.525   1.340  round_count/round_s_4 (round_count/round_s_4)
+     LUT5:I0->O           19   0.254   1.261  Mmux_feistel_input1291_1 (Mmux_feistel_input1291)
+     LUT3:I2->O            1   0.254   0.681  Mmux_feistel_input310 (feistel_input<101>)
+     MUXCY:DI->O           1   0.181   0.000  feistel/mx_0/Madd_x_cy<0> (feistel/mx_0/Madd_x_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<1> (feistel/mx_0/Madd_x_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<2> (feistel/mx_0/Madd_x_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<3> (feistel/mx_0/Madd_x_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<4> (feistel/mx_0/Madd_x_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<5> (feistel/mx_0/Madd_x_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<6> (feistel/mx_0/Madd_x_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<7> (feistel/mx_0/Madd_x_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<8> (feistel/mx_0/Madd_x_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<9> (feistel/mx_0/Madd_x_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<10> (feistel/mx_0/Madd_x_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<11> (feistel/mx_0/Madd_x_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<12> (feistel/mx_0/Madd_x_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<13> (feistel/mx_0/Madd_x_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<14> (feistel/mx_0/Madd_x_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<15> (feistel/mx_0/Madd_x_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<16> (feistel/mx_0/Madd_x_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<17> (feistel/mx_0/Madd_x_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<18> (feistel/mx_0/Madd_x_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<19> (feistel/mx_0/Madd_x_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<20> (feistel/mx_0/Madd_x_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<21> (feistel/mx_0/Madd_x_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<22> (feistel/mx_0/Madd_x_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<23> (feistel/mx_0/Madd_x_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<24> (feistel/mx_0/Madd_x_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<25> (feistel/mx_0/Madd_x_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<26> (feistel/mx_0/Madd_x_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<27> (feistel/mx_0/Madd_x_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<28> (feistel/mx_0/Madd_x_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<29> (feistel/mx_0/Madd_x_cy<29>)
+     XORCY:CI->O           1   0.206   0.682  feistel/mx_0/Madd_x_xor<30> (feistel/mx_0/x<30>)
+     LUT5:I4->O            1   0.254   0.000  feistel/mx_0/Madd_sigma_lut<30> (feistel/mx_0/Madd_sigma_lut<30>)
+     MUXCY:S->O            0   0.215   0.000  feistel/mx_0/Madd_sigma_cy<30> (feistel/mx_0/Madd_sigma_cy<30>)
+     XORCY:CI->O           1   0.206   0.000  feistel/mx_0/Madd_sigma_xor<31> (feistel/sigma_0<31>)
+     FDE:D                     0.074          feistel/pl_reg0_31
     ----------------------------------------
-    Total                      2.915ns (1.552ns logic, 1.363ns route)
-                                       (53.2% logic, 46.8% route)
+    Total                      6.807ns (2.843ns logic, 3.964ns route)
+                                       (41.8% logic, 58.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 275 / 275
+  Total number of paths / destination ports: 50323 / 1033
 -------------------------------------------------------------------------
-Offset:              3.983ns (Levels of Logic = 2)
+Offset:              6.823ns (Levels of Logic = 2)
   Source:            en (PAD)
-  Destination:       sums_comp/counter_1 (FF)
+  Destination:       sums_comp/sum_1s_31 (FF)
   Destination Clock: clk rising
 
-  Data Path: en to sums_comp/counter_1
+  Data Path: en to sums_comp/sum_1s_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  en_IBUF (en_IBUF)
-     INV:I->O             19   0.255   1.260  sums_comp/en_inv1_INV_0 (sums_comp/en_inv)
-     FDR:R                     0.459          sums_comp/sum_2s_0
+     IBUF:I->O           513   1.328   2.459  en_IBUF (en_IBUF)
+     INV:I->O            137   0.255   2.322  en_inv1_INV_0 (en_inv)
+     FDRE:R                    0.459          sums_comp/counter_0
     ----------------------------------------
-    Total                      3.983ns (2.042ns logic, 1.941ns route)
-                                       (51.3% logic, 48.7% route)
+    Total                      6.823ns (2.042ns logic, 4.781ns route)
+                                       (29.9% logic, 70.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 768 / 128
+  Total number of paths / destination ports: 128 / 128
 -------------------------------------------------------------------------
-Offset:              6.380ns (Levels of Logic = 2)
-  Source:            sums_comp/sum_2s_2 (FF)
-  Destination:       ct<95> (PAD)
+Offset:              4.346ns (Levels of Logic = 1)
+  Source:            feistel/pl_reg3_56 (FF)
+  Destination:       ct<56> (PAD)
   Source Clock:      clk rising
 
-  Data Path: sums_comp/sum_2s_2 to ct<95>
+  Data Path: feistel/pl_reg3_56 to ct<56>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             34   0.525   2.008  sums_comp/sum_2s_2 (sums_comp/sum_2s_2)
-     LUT6:I0->O            1   0.254   0.681  key_mod/key_stor/Mmux_key_291 (ct_81_OBUF)
-     OBUF:I->O                 2.912          ct_81_OBUF (ct<81>)
+     FDE:C->Q              7   0.525   0.909  feistel/pl_reg3_56 (feistel/pl_reg3_56)
+     OBUF:I->O                 2.912          ct_56_OBUF (ct<56>)
     ----------------------------------------
-    Total                      6.380ns (3.691ns logic, 2.689ns route)
-                                       (57.8% logic, 42.2% route)
+    Total                      4.346ns (3.437ns logic, 0.909ns route)
+                                       (79.1% logic, 20.9% route)
 
 =========================================================================
 
@@ -556,20 +615,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.915|         |         |         |
+clk            |    6.807|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.56 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.25 secs
  
 --> 
 
-Total memory usage is 294440 kilobytes
+Total memory usage is 266268 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  122 (   0 filtered)
+Number of warnings :   12 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

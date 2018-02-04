@@ -1,5 +1,8 @@
+vhdl work "mx_add.vhd"
 vhdl work "key_scheduler.vhd"
 vhdl work "key_RAM.vhd"
 vhdl work "sums.vhd"
+vhdl work "round_counter.vhd"
+vhdl work "mx.vhd"
 vhdl work "key_module.vhd"
 vhdl work "xxtea_encrypt.vhd"

@@ -88,10 +88,12 @@ begin
 	
 	BEGIN
 		if rising_edge(clk) then
+			if en = '1' then
 				pl_reg0 <= w3 & w2 & w1 & sigma_0;
 				pl_reg1 <= pl_reg0(127 downto 64) & sigma_1 & pl_reg0(31 downto 0);
 				pl_reg2 <= pl_reg1(127 downto 96) & sigma_2 & pl_reg1(63 downto 0);
 				pl_reg3 <= sigma_3 & pl_reg2(95 downto 0);
+			end if;
 		end if;
 	END PROCESS;
 	

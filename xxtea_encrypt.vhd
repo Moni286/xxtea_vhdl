@@ -64,6 +64,31 @@ COMPONENT key_module is
            key_3 : out  STD_LOGIC_VECTOR (31 downto 0));
 END COMPONENT key_module;
 
+COMPONENT feistel_net is
+    Port ( 	clk : in STD_LOGIC;
+				en : in STD_LOGIC;
+				state : in  STD_LOGIC_VECTOR(127 downto 0);
+				sum_0 : in STD_LOGIC_VECTOR(31 downto 0);
+				sum_1 : in STD_LOGIC_VECTOR(31 downto 0);
+				sum_2 : in STD_LOGIC_VECTOR(31 downto 0);
+				sum_3 : in STD_LOGIC_VECTOR(31 downto 0);
+				key_0 : in STD_LOGIC_VECTOR(31 downto 0);
+				key_1 : in STD_LOGIC_VECTOR(31 downto 0);
+				key_2 : in STD_LOGIC_VECTOR(31 downto 0);
+				key_3 : in STD_LOGIC_VECTOR(31 downto 0);
+				next_state : out STD_LOGIC_VECTOR(127 downto 0)
+			);
+END COMPONENT feistel_net;
+
+COMPONENT round_counter is
+    Port ( clk : in  STD_LOGIC;
+			  en : in STD_LOGIC;
+           round : out  STD_LOGIC_VECTOR (4 downto 0));
+END COMPONENT round_counter;
+
+signal feistel_input : STD_LOGIC_VECTOR(127 downto 0);
+signal round : STD_LOGIC_VECTOR(4 downto 0);
+
 signal sum_0 : STD_LOGIC_VECTOR(31 downto 0);
 signal sum_1 : STD_LOGIC_VECTOR(31 downto 0);
 signal sum_2 : STD_LOGIC_VECTOR(31 downto 0);
@@ -74,11 +99,30 @@ signal key_1 : STD_LOGIC_VECTOR(31 downto 0);
 signal key_2 : STD_LOGIC_VECTOR(31 downto 0);
 signal key_3 : STD_LOGIC_VECTOR(31 downto 0);
 
+signal next_state : STD_LOGIC_VECTOR(127 downto 0);
+
 begin
 
 	sums_comp : sums PORT MAP(clk, en, sum_0, sum_1, sum_2, sum_3);
 	key_mod	 : key_module PORT MAP(clk, w, key, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3);
-
-	ct <= key_3 & key_2 & key_1 & key_0;
+	
+	feistel 	 : feistel_net PORT MAP(clk, en, feistel_input, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3, next_state);
+	
+	round_count : round_counter PORT MAP(clk, en, round);
+	
+	ct <= next_state;
+	
+	PROCESS(round)
+	
+	BEGIN
+			if round = "00000" then
+				feistel_input <= pt;
+			else
+				feistel_input <= next_state;
+			end if;
+		
+	END PROCESS;
 end Behavioral;
+
+
 
