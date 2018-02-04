@@ -2,3 +2,6 @@ xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+xst -intstyle ise -ifn "C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt.xst" -ofn "C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-2 "xxtea_encrypt.ngc" xxtea_encrypt.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o xxtea_encrypt_map.ncd xxtea_encrypt.ngd xxtea_encrypt.pcf 
