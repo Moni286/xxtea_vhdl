@@ -42,6 +42,7 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="key_RAM.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="key_RAM.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="key_RAM.ngc"/>
@@ -112,9 +113,7 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="round_counter_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="round_counter_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="round_counter_summary.xml"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="round_counter_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="round_counter_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="round_counter_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="round_counter_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="round_counter_xst.xrpt"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="sums.cmd_log"/>
@@ -146,12 +145,17 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="xxtea_encrypt.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="xxtea_encrypt.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="xxtea_encrypt_envsettings.html"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="xxtea_encrypt_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="xxtea_encrypt_map.map"/>
     <file xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="xxtea_encrypt_map.mrp"/>
     <file xil_pn:fileType="FILE_NGM" xil_pn:name="xxtea_encrypt_map.ngm"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="xxtea_encrypt_map.xrpt"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="xxtea_encrypt_ngdbuild.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="xxtea_encrypt_summary.html"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="xxtea_encrypt_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="xxtea_encrypt_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="xxtea_encrypt_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="xxtea_encrypt_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="xxtea_encrypt_xst.xrpt"/>
   </files>
 
@@ -160,13 +164,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1517730292" xil_pn:in_ck="7676462717239436197" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1517730292">
+    <transform xil_pn:end_ts="1517732688" xil_pn:in_ck="-5492359376282439208" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1517732688">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="key_RAM.vhd"/>
       <outfile xil_pn:name="key_module.vhd"/>
       <outfile xil_pn:name="key_scheduler.vhd"/>
@@ -177,28 +177,23 @@
       <outfile xil_pn:name="sums.vhd"/>
       <outfile xil_pn:name="sums_tb.vhd"/>
       <outfile xil_pn:name="xxtea_encrypt.vhd"/>
+      <outfile xil_pn:name="xxtea_encrypt_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1517729998" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8082650863947289486" xil_pn:start_ts="1517729998">
+    <transform xil_pn:end_ts="1517731545" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5901970999876942887" xil_pn:start_ts="1517731545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1517729998" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="298713606257042672" xil_pn:start_ts="1517729998">
+    <transform xil_pn:end_ts="1517731545" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-602923452696794537" xil_pn:start_ts="1517731545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1517729982" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="6850058789212859542" xil_pn:start_ts="1517729982">
+    <transform xil_pn:end_ts="1517731003" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-6650998672720096067" xil_pn:start_ts="1517731003">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
-    <transform xil_pn:end_ts="1517730292" xil_pn:in_ck="7676462717239436197" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1517730292">
+    <transform xil_pn:end_ts="1517732688" xil_pn:in_ck="-5492359376282439208" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1517732688">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="key_RAM.vhd"/>
       <outfile xil_pn:name="key_module.vhd"/>
       <outfile xil_pn:name="key_scheduler.vhd"/>
@@ -209,27 +204,24 @@
       <outfile xil_pn:name="sums.vhd"/>
       <outfile xil_pn:name="sums_tb.vhd"/>
       <outfile xil_pn:name="xxtea_encrypt.vhd"/>
+      <outfile xil_pn:name="xxtea_encrypt_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1517730296" xil_pn:in_ck="7676462717239436197" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1749349310418625980" xil_pn:start_ts="1517730292">
+    <transform xil_pn:end_ts="1517732692" xil_pn:in_ck="-5492359376282439208" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="181253960721153298" xil_pn:start_ts="1517732688">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="round_counter_tb_beh.prj"/>
-      <outfile xil_pn:name="round_counter_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
+      <outfile xil_pn:name="xxtea_encrypt_tb_beh.prj"/>
+      <outfile xil_pn:name="xxtea_encrypt_tb_isim_beh.exe"/>
     </transform>
-    <transform xil_pn:end_ts="1517730296" xil_pn:in_ck="-3217604385744826409" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2293542561968156335" xil_pn:start_ts="1517730296">
+    <transform xil_pn:end_ts="1517732693" xil_pn:in_ck="-4864300581962683354" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2046938882808696655" xil_pn:start_ts="1517732692">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="round_counter_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xxtea_encrypt_tb_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1517658399" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1517658399">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -263,6 +255,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="key_RAM.ngr"/>
       <outfile xil_pn:name="key_module.ngr"/>

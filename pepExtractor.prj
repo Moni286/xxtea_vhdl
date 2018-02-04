@@ -1,1 +1,8 @@
+work	"key_RAM.vhd"
+work	"key_module.vhd"
+work	"key_scheduler.vhd"
+work	"mx.vhd"
+work	"mx_add.vhd"
 work	"round_counter.vhd"
+work	"sums.vhd"
+work	"xxtea_encrypt.vhd"

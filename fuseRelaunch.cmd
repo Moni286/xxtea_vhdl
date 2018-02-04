@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/round_counter_tb_isim_beh.exe" -prj "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/round_counter_tb_beh.prj" "work.round_counter_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt_tb_isim_beh.exe" -prj "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt_tb_beh.prj" "work.xxtea_encrypt_tb" 

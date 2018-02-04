@@ -35,7 +35,8 @@ entity xxtea_encrypt is
            w : in  STD_LOGIC;
            key : in  STD_LOGIC_VECTOR (127 downto 0);
            pt : in  STD_LOGIC_VECTOR (127 downto 0);
-           ct : out  STD_LOGIC_VECTOR (127 downto 0));
+           ct : out  STD_LOGIC_VECTOR (127 downto 0);
+			  round: out STD_LOGIC_VECTOR(4 downto 0));
 end xxtea_encrypt;
 
 architecture Behavioral of xxtea_encrypt is
@@ -87,7 +88,7 @@ COMPONENT round_counter is
 END COMPONENT round_counter;
 
 signal feistel_input : STD_LOGIC_VECTOR(127 downto 0);
-signal round : STD_LOGIC_VECTOR(4 downto 0);
+signal round_s : STD_LOGIC_VECTOR(4 downto 0);
 
 signal sum_0 : STD_LOGIC_VECTOR(31 downto 0);
 signal sum_1 : STD_LOGIC_VECTOR(31 downto 0);
@@ -108,14 +109,15 @@ begin
 	
 	feistel 	 : feistel_net PORT MAP(clk, en, feistel_input, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3, next_state);
 	
-	round_count : round_counter PORT MAP(clk, en, round);
+	round_count : round_counter PORT MAP(clk, en, round_s);
 	
 	ct <= next_state;
+	round <= round_s;
 	
-	PROCESS(round)
+	PROCESS(round_s)
 	
 	BEGIN
-			if round = "00000" then
+			if round_s = "00000" then
 				feistel_input <= pt;
 			else
 				feistel_input <= next_state;

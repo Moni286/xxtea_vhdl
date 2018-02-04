@@ -1,0 +1,10 @@
+Command line:
+   xxtea_encrypt_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49580
+
+Sun Feb 04 12:24:54 2018
+
+
+ Elaboration Time: 0.0624 sec
