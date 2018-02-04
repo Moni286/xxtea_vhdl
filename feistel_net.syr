@@ -1,0 +1,563 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Reading design: feistel_net.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "feistel_net.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "feistel_net"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : feistel_net
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx_add.vhd" into library work
+Parsing entity <mx_add>.
+Parsing architecture <Behavioral> of entity <mx_add>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx.vhd" into library work
+Parsing entity <feistel_net>.
+Parsing architecture <Behavioral> of entity <feistel_net>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <feistel_net> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <mx_add> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <feistel_net>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx.vhd".
+WARNING:Xst:647 - Input <en> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 128-bit register for signal <pl_reg1>.
+    Found 128-bit register for signal <pl_reg2>.
+    Found 128-bit register for signal <next_state>.
+    Found 128-bit register for signal <pl_reg0>.
+    Summary:
+	inferred 512 D-type flip-flop(s).
+Unit <feistel_net> synthesized.
+
+Synthesizing Unit <mx_add>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx_add.vhd".
+    Found 32-bit adder for signal <x> created at line 62.
+    Found 32-bit adder for signal <a> created at line 63.
+    Found 32-bit adder for signal <sigma> created at line 67.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+Unit <mx_add> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 12
+ 32-bit adder                                          : 12
+# Registers                                            : 4
+ 128-bit register                                      : 4
+# Xors                                                 : 20
+ 32-bit xor2                                           : 20
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 12
+ 32-bit adder                                          : 12
+# Registers                                            : 512
+ Flip-Flops                                            : 512
+# Xors                                                 : 20
+ 32-bit xor2                                           : 20
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <feistel_net> ...
+
+Optimizing unit <mx_add> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block feistel_net, actual ratio is 13.
+
+Final Macro Processing ...
+
+Processing Unit <feistel_net> :
+	Found 2-bit shift register for signal <pl_reg1_96>.
+	Found 2-bit shift register for signal <pl_reg1_97>.
+	Found 2-bit shift register for signal <pl_reg1_98>.
+	Found 2-bit shift register for signal <pl_reg1_99>.
+	Found 2-bit shift register for signal <pl_reg1_100>.
+	Found 2-bit shift register for signal <pl_reg1_101>.
+	Found 2-bit shift register for signal <pl_reg1_102>.
+	Found 2-bit shift register for signal <pl_reg1_103>.
+	Found 2-bit shift register for signal <pl_reg1_104>.
+	Found 2-bit shift register for signal <pl_reg1_105>.
+	Found 2-bit shift register for signal <pl_reg1_106>.
+	Found 2-bit shift register for signal <pl_reg1_107>.
+	Found 2-bit shift register for signal <pl_reg1_108>.
+	Found 2-bit shift register for signal <pl_reg1_109>.
+	Found 2-bit shift register for signal <pl_reg1_110>.
+	Found 2-bit shift register for signal <pl_reg1_111>.
+	Found 2-bit shift register for signal <pl_reg1_112>.
+	Found 2-bit shift register for signal <pl_reg1_113>.
+	Found 2-bit shift register for signal <pl_reg1_114>.
+	Found 2-bit shift register for signal <pl_reg1_115>.
+	Found 2-bit shift register for signal <pl_reg1_116>.
+	Found 2-bit shift register for signal <pl_reg1_117>.
+	Found 2-bit shift register for signal <pl_reg1_118>.
+	Found 2-bit shift register for signal <pl_reg1_119>.
+	Found 2-bit shift register for signal <pl_reg1_120>.
+	Found 2-bit shift register for signal <pl_reg1_121>.
+	Found 2-bit shift register for signal <pl_reg1_122>.
+	Found 2-bit shift register for signal <pl_reg1_123>.
+	Found 2-bit shift register for signal <pl_reg1_124>.
+	Found 2-bit shift register for signal <pl_reg1_125>.
+	Found 2-bit shift register for signal <pl_reg1_126>.
+	Found 2-bit shift register for signal <pl_reg1_127>.
+	Found 2-bit shift register for signal <pl_reg2_0>.
+	Found 2-bit shift register for signal <pl_reg2_1>.
+	Found 2-bit shift register for signal <pl_reg2_2>.
+	Found 2-bit shift register for signal <pl_reg2_3>.
+	Found 2-bit shift register for signal <pl_reg2_4>.
+	Found 2-bit shift register for signal <pl_reg2_5>.
+	Found 2-bit shift register for signal <pl_reg2_6>.
+	Found 2-bit shift register for signal <pl_reg2_7>.
+	Found 2-bit shift register for signal <pl_reg2_8>.
+	Found 2-bit shift register for signal <pl_reg2_9>.
+	Found 2-bit shift register for signal <pl_reg2_10>.
+	Found 2-bit shift register for signal <pl_reg2_11>.
+	Found 2-bit shift register for signal <pl_reg2_12>.
+	Found 2-bit shift register for signal <pl_reg2_13>.
+	Found 2-bit shift register for signal <pl_reg2_14>.
+	Found 2-bit shift register for signal <pl_reg2_15>.
+	Found 2-bit shift register for signal <pl_reg2_16>.
+	Found 2-bit shift register for signal <pl_reg2_17>.
+	Found 2-bit shift register for signal <pl_reg2_18>.
+	Found 2-bit shift register for signal <pl_reg2_19>.
+	Found 2-bit shift register for signal <pl_reg2_20>.
+	Found 2-bit shift register for signal <pl_reg2_21>.
+	Found 2-bit shift register for signal <pl_reg2_22>.
+	Found 2-bit shift register for signal <pl_reg2_23>.
+	Found 2-bit shift register for signal <pl_reg2_24>.
+	Found 2-bit shift register for signal <pl_reg2_25>.
+	Found 2-bit shift register for signal <pl_reg2_26>.
+	Found 2-bit shift register for signal <pl_reg2_27>.
+	Found 2-bit shift register for signal <pl_reg2_28>.
+	Found 2-bit shift register for signal <pl_reg2_29>.
+	Found 2-bit shift register for signal <pl_reg2_30>.
+	Found 2-bit shift register for signal <pl_reg2_31>.
+	Found 2-bit shift register for signal <pl_reg3_32>.
+	Found 2-bit shift register for signal <pl_reg3_33>.
+	Found 2-bit shift register for signal <pl_reg3_34>.
+	Found 2-bit shift register for signal <pl_reg3_35>.
+	Found 2-bit shift register for signal <pl_reg3_36>.
+	Found 2-bit shift register for signal <pl_reg3_37>.
+	Found 2-bit shift register for signal <pl_reg3_38>.
+	Found 2-bit shift register for signal <pl_reg3_39>.
+	Found 2-bit shift register for signal <pl_reg3_40>.
+	Found 2-bit shift register for signal <pl_reg3_41>.
+	Found 2-bit shift register for signal <pl_reg3_42>.
+	Found 2-bit shift register for signal <pl_reg3_43>.
+	Found 2-bit shift register for signal <pl_reg3_44>.
+	Found 2-bit shift register for signal <pl_reg3_45>.
+	Found 2-bit shift register for signal <pl_reg3_46>.
+	Found 2-bit shift register for signal <pl_reg3_47>.
+	Found 2-bit shift register for signal <pl_reg3_48>.
+	Found 2-bit shift register for signal <pl_reg3_49>.
+	Found 2-bit shift register for signal <pl_reg3_50>.
+	Found 2-bit shift register for signal <pl_reg3_51>.
+	Found 2-bit shift register for signal <pl_reg3_52>.
+	Found 2-bit shift register for signal <pl_reg3_53>.
+	Found 2-bit shift register for signal <pl_reg3_54>.
+	Found 2-bit shift register for signal <pl_reg3_55>.
+	Found 2-bit shift register for signal <pl_reg3_56>.
+	Found 2-bit shift register for signal <pl_reg3_57>.
+	Found 2-bit shift register for signal <pl_reg3_58>.
+	Found 2-bit shift register for signal <pl_reg3_59>.
+	Found 2-bit shift register for signal <pl_reg3_60>.
+	Found 2-bit shift register for signal <pl_reg3_61>.
+	Found 2-bit shift register for signal <pl_reg3_62>.
+	Found 2-bit shift register for signal <pl_reg3_63>.
+Unit <feistel_net> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 320
+ Flip-Flops                                            : 320
+# Shift Registers                                      : 96
+ 2-bit shift register                                  : 96
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : feistel_net.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1366
+#      GND                         : 1
+#      LUT2                        : 244
+#      LUT3                        : 144
+#      LUT4                        : 220
+#      MUXCY                       : 372
+#      VCC                         : 1
+#      XORCY                       : 384
+# FlipFlops/Latches                : 416
+#      FD                          : 320
+#      FDE                         : 96
+# Shift Registers                  : 96
+#      SRLC16E                     : 96
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 512
+#      IBUF                        : 384
+#      OBUF                        : 128
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             416  out of  18224     2%  
+ Number of Slice LUTs:                  704  out of   9112     7%  
+    Number used as Logic:               608  out of   9112     6%  
+    Number used as Memory:               96  out of   2176     4%  
+       Number used as SRL:               96
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    928
+   Number with an unused Flip Flop:     512  out of    928    55%  
+   Number with an unused LUT:           224  out of    928    24%  
+   Number of fully used LUT-FF pairs:   192  out of    928    20%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                         514
+ Number of bonded IOBs:                 513  out of    232   221% (*) 
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 512   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.309ns (Maximum Frequency: 232.086MHz)
+   Minimum input arrival time before clock: 5.262ns
+   Maximum output required time after clock: 4.118ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.309ns (frequency: 232.086MHz)
+  Total number of paths / destination ports: 148254 / 384
+-------------------------------------------------------------------------
+Delay:               4.309ns (Levels of Logic = 33)
+  Source:            pl_reg0_64 (FF)
+  Destination:       pl_reg1_63 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: pl_reg0_64 to pl_reg1_63
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               5   0.525   1.069  pl_reg0_64 (pl_reg0_64)
+     LUT3:I0->O            1   0.235   0.000  mx_1/Madd_x_lut<2> (mx_1/Madd_x_lut<2>)
+     MUXCY:S->O            1   0.215   0.000  mx_1/Madd_x_cy<2> (mx_1/Madd_x_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<3> (mx_1/Madd_x_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<4> (mx_1/Madd_x_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<5> (mx_1/Madd_x_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<6> (mx_1/Madd_x_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<7> (mx_1/Madd_x_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<8> (mx_1/Madd_x_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<9> (mx_1/Madd_x_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<10> (mx_1/Madd_x_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<11> (mx_1/Madd_x_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<12> (mx_1/Madd_x_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<13> (mx_1/Madd_x_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<14> (mx_1/Madd_x_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<15> (mx_1/Madd_x_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<16> (mx_1/Madd_x_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<17> (mx_1/Madd_x_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<18> (mx_1/Madd_x_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<19> (mx_1/Madd_x_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<20> (mx_1/Madd_x_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<21> (mx_1/Madd_x_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<22> (mx_1/Madd_x_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<23> (mx_1/Madd_x_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<24> (mx_1/Madd_x_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<25> (mx_1/Madd_x_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<26> (mx_1/Madd_x_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<27> (mx_1/Madd_x_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<28> (mx_1/Madd_x_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  mx_1/Madd_x_cy<29> (mx_1/Madd_x_cy<29>)
+     XORCY:CI->O           1   0.206   0.682  mx_1/Madd_x_xor<30> (mx_1/x<30>)
+     LUT3:I2->O            1   0.254   0.000  mx_1/Madd_sigma_lut<30> (mx_1/Madd_sigma_lut<30>)
+     MUXCY:S->O            0   0.215   0.000  mx_1/Madd_sigma_cy<30> (mx_1/Madd_sigma_cy<30>)
+     XORCY:CI->O           1   0.206   0.000  mx_1/Madd_sigma_xor<31> (sigma_1<31>)
+     FD:D                      0.074          pl_reg1_63
+    ----------------------------------------
+    Total                      4.309ns (2.558ns logic, 1.751ns route)
+                                       (59.4% logic, 40.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 119114 / 224
+-------------------------------------------------------------------------
+Offset:              5.262ns (Levels of Logic = 36)
+  Source:            state<32> (PAD)
+  Destination:       pl_reg0_31 (FF)
+  Destination Clock: clk rising
+
+  Data Path: state<32> to pl_reg0_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.328   1.069  state_32_IBUF (state_32_IBUF)
+     LUT4:I1->O            1   0.235   0.000  mx_0/Madd_a_lut<0> (mx_0/Madd_a_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  mx_0/Madd_a_cy<0> (mx_0/Madd_a_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<1> (mx_0/Madd_a_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<2> (mx_0/Madd_a_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<3> (mx_0/Madd_a_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<4> (mx_0/Madd_a_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<5> (mx_0/Madd_a_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<6> (mx_0/Madd_a_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<7> (mx_0/Madd_a_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<8> (mx_0/Madd_a_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<9> (mx_0/Madd_a_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<10> (mx_0/Madd_a_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<11> (mx_0/Madd_a_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<12> (mx_0/Madd_a_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<13> (mx_0/Madd_a_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<14> (mx_0/Madd_a_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<15> (mx_0/Madd_a_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<16> (mx_0/Madd_a_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<17> (mx_0/Madd_a_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<18> (mx_0/Madd_a_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<19> (mx_0/Madd_a_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<20> (mx_0/Madd_a_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<21> (mx_0/Madd_a_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<22> (mx_0/Madd_a_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<23> (mx_0/Madd_a_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<24> (mx_0/Madd_a_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<25> (mx_0/Madd_a_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<26> (mx_0/Madd_a_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<27> (mx_0/Madd_a_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<28> (mx_0/Madd_a_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  mx_0/Madd_a_cy<29> (mx_0/Madd_a_cy<29>)
+     XORCY:CI->O           1   0.206   0.790  mx_0/Madd_a_xor<30> (mx_0/a<30>)
+     LUT3:I1->O            1   0.250   0.000  mx_0/Madd_sigma_lut<30> (mx_0/Madd_sigma_lut<30>)
+     MUXCY:S->O            0   0.215   0.000  mx_0/Madd_sigma_cy<30> (mx_0/Madd_sigma_cy<30>)
+     XORCY:CI->O           1   0.206   0.000  mx_0/Madd_sigma_xor<31> (sigma_0<31>)
+     FD:D                      0.074          pl_reg0_31
+    ----------------------------------------
+    Total                      5.262ns (3.403ns logic, 1.859ns route)
+                                       (64.7% logic, 35.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 128 / 128
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            pl_reg3_127 (FF)
+  Destination:       next_state<127> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: pl_reg3_127 to next_state<127>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.525   0.681  pl_reg3_127 (pl_reg3_127)
+     OBUF:I->O                 2.912          next_state_127_OBUF (next_state<127>)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.309|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.67 secs
+ 
+--> 
+
+Total memory usage is 264668 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

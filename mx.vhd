@@ -29,34 +29,75 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity mx is
-    Port ( 	sum : in  STD_LOGIC_VECTOR(31 downto 0);
-				key : in STD_LOGIC_VECTOR(31 downto 0);
-				word : in STD_LOGIC_VECTOR(127 downto 0);
-				result : out  STD_LOGIC_VECTOR (127 downto 0)
+entity feistel_net is
+    Port ( 	clk : in STD_LOGIC;
+				en : in STD_LOGIC;
+				state : in  STD_LOGIC_VECTOR(127 downto 0);
+				sum_0 : in STD_LOGIC_VECTOR(31 downto 0);
+				sum_1 : in STD_LOGIC_VECTOR(31 downto 0);
+				sum_2 : in STD_LOGIC_VECTOR(31 downto 0);
+				sum_3 : in STD_LOGIC_VECTOR(31 downto 0);
+				key_0 : in STD_LOGIC_VECTOR(31 downto 0);
+				key_1 : in STD_LOGIC_VECTOR(31 downto 0);
+				key_2 : in STD_LOGIC_VECTOR(31 downto 0);
+				key_3 : in STD_LOGIC_VECTOR(31 downto 0);
+				next_state : out STD_LOGIC_VECTOR(127 downto 0)
 			);
-end mx;
+end feistel_net;
 
-architecture Behavioral of mx is
+architecture Behavioral of feistel_net is
 
-COMPONENT mx_plus_1 is
-	Port ( 	sum : in STD_LOGIC_VECTOR(31 downto 0);
-				key : in STD_LOGIC_VECTOR(31 downto 0);
-				x : in STD_LOGIC_VECTOR(31 downto 0);
-				y : in STD_LOGIC_VECTOR(31 downto 0);
-				z : in STD_LOGIC_VECTOR(31 downto 0);
-				sigma : out STD_LOGIC_VECTOR(31 downto 0)
-			);
-END COMPONENT mx_plus_1;
+COMPONENT mx_add is
+    Port ( z : in  STD_LOGIC_VECTOR (31 downto 0);
+           y : in  STD_LOGIC_VECTOR (31 downto 0);
+           addend : in  STD_LOGIC_VECTOR (31 downto 0);
+           sum : in  STD_LOGIC_VECTOR (31 downto 0);
+           key : in  STD_LOGIC_VECTOR (31 downto 0);
+           sigma : out  STD_LOGIC_VECTOR (31 downto 0));
+END COMPONENT mx_add;
 
-signal x : STD_LOGIC_VECTOR(31 downto 0);
-signal y : STD_LOGIC_VECTOR(31 downto 0);
-signal z : STD_LOGIC_VECTOR(31 downto 0);
-signal result : STD_LOGIC_VECTOR(31 downto 0);
+signal w0 : STD_LOGIC_VECTOR(31 downto 0);
+signal w1 : STD_LOGIC_VECTOR(31 downto 0);
+signal w2 : STD_LOGIC_VECTOR(31 downto 0);
+signal w3 : STD_LOGIC_VECTOR(31 downto 0);
+
+signal pl_reg0 : STD_LOGIC_VECTOR(127 downto 0);
+signal pl_reg1 : STD_LOGIC_VECTOR(127 downto 0);
+signal pl_reg2 : STD_LOGIC_VECTOR(127 downto 0);
+signal pl_reg3 : STD_LOGIC_VECTOR(127 downto 0);
+
+signal sigma_0 : STD_LOGIC_VECTOR(31 downto 0);
+signal sigma_1 : STD_LOGIC_VECTOR(31 downto 0);
+signal sigma_2 : STD_LOGIC_VECTOR(31 downto 0);
+signal sigma_3 : STD_LOGIC_VECTOR(31 downto 0);
 
 begin
-
-	mx_1 : mx_plus_1 PORT MAP(sum, key, x, y, z, result);
-
+	w0 <= state(31 downto 0);
+	w1 <= state(63 downto 32);
+	w2 <= state(95 downto 64);
+	w3 <= state(127 downto 96);
+	
+	mx_0 : mx_add PORT MAP(w3, w1, w0, sum_0, key_0, sigma_0);
+	mx_1 : mx_add PORT MAP(pl_reg0(31 downto 0), pl_reg0(95 downto 64), pl_reg0(63 downto 32), sum_1, key_1, sigma_1);
+	mx_2 : mx_add PORT MAP(pl_reg1(63 downto 32), pl_reg1(127 downto 96), pl_reg1(95 downto 64), sum_2, key_2, sigma_2);
+	mx_3 : mx_add PORT MAP(pl_reg2(95 downto 64), pl_reg2(31 downto 0), pl_reg2(127 downto 96), sum_3, key_3, sigma_3);
+	
+	next_state <= pl_reg3;
+	
+	PROCESS(clk)
+	
+	BEGIN
+		if rising_edge(clk) then
+				pl_reg0 <= w3 & w2 & w1 & sigma_0;
+				pl_reg1 <= pl_reg0(127 downto 64) & sigma_1 & pl_reg0(31 downto 0);
+				pl_reg2 <= pl_reg1(127 downto 96) & sigma_2 & pl_reg1(63 downto 0);
+				pl_reg3 <= sigma_3 & pl_reg2(95 downto 0);
+		end if;
+	END PROCESS;
+	
 end Behavioral;
+
+
+
+
 
