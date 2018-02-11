@@ -36,7 +36,9 @@ entity xxtea_encrypt is
            key : in  STD_LOGIC_VECTOR (127 downto 0);
            pt : in  STD_LOGIC_VECTOR (127 downto 0);
            ct : out  STD_LOGIC_VECTOR (127 downto 0);
-			  round: out STD_LOGIC_VECTOR(4 downto 0));
+			  round: out STD_LOGIC_VECTOR(4 downto 0);
+			  sum : out STD_LOGIC_VECTOR(31 downto 0)
+			  );
 end xxtea_encrypt;
 
 architecture Behavioral of xxtea_encrypt is
@@ -113,6 +115,7 @@ begin
 	
 	ct <= next_state;
 	round <= round_s;
+	sum <= sum_0;
 	
 	PROCESS(round_s)
 	

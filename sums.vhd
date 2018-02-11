@@ -58,10 +58,10 @@ begin
 		if rising_edge(clk) then
 		
 			if (en = '0') then
-				sum_0s <= x"00000000";
-				sum_1s <= x"00000000";
-				sum_2s <= x"00000000";
-				sum_3s <= x"00000000";
+				sum_0s <= x"9e3779b9";
+				sum_1s <= x"9e3779b9";
+				sum_2s <= x"9e3779b9";
+				sum_3s <= x"9e3779b9";
 				counter <= "00";
 			else
 				

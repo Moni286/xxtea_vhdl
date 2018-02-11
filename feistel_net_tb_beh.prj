@@ -1,0 +1,3 @@
+vhdl work "mx_add.vhd"
+vhdl work "mx.vhd"
+vhdl work "feistel_net_tb.vhd"

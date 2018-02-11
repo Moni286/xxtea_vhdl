@@ -47,7 +47,8 @@ ARCHITECTURE behavior OF xxtea_encrypt_tb IS
          key : IN  std_logic_vector(127 downto 0);
          pt : IN  std_logic_vector(127 downto 0);
          ct : OUT  std_logic_vector(127 downto 0);
-			round: OUT STD_LOGIC_VECTOR(4 downto 0)
+			round: OUT STD_LOGIC_VECTOR(4 downto 0);
+			sum : OUT STD_LOGIC_VECTOR(31 downto 0)
         );
     END COMPONENT;
     
@@ -62,6 +63,7 @@ ARCHITECTURE behavior OF xxtea_encrypt_tb IS
  	--Outputs
    signal ct : std_logic_vector(127 downto 0);
 	signal round: STD_LOGIC_VECTOR(4 downto 0);
+	signal sum : STD_LOGIC_VECTOR(31 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -76,7 +78,8 @@ BEGIN
           key => key,
           pt => pt,
           ct => ct,
-			 round => round
+			 round => round,
+			 sum => sum
         );
 
    -- Clock process definitions
@@ -103,6 +106,7 @@ BEGIN
 		wait for clk_period;
 		
 		en <= '1';
+		w <= '0';
 		pt <= x"31323334353637383837363534333231";
 
       wait;

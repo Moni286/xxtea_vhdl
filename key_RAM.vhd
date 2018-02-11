@@ -50,7 +50,6 @@ type t_key is array (0 to 3)
         of STD_LOGIC_VECTOR(31 downto 0);
 		  
 signal key_s : t_key;
-signal e : STD_LOGIC_VECTOR(1 downto 0);
 
 begin
 	PROCESS(clk)
@@ -59,10 +58,10 @@ begin
 		
 		if rising_edge(clk) then
 			if w = '1' then
-				key_s(0) <= key_in(31 downto 0);
-				key_s(1) <= key_in(63 downto 32);
-				key_s(2) <= key_in(95 downto 64);
-				key_s(3) <= key_in(127 downto 96);
+				key_s(3) <= key_in(31 downto 0);
+				key_s(2) <= key_in(63 downto 32);
+				key_s(1) <= key_in(95 downto 64);
+				key_s(0) <= key_in(127 downto 96);
 			end if;
 		end if;
 		
