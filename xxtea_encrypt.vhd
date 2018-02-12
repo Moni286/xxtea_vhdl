@@ -86,7 +86,8 @@ END COMPONENT feistel_net;
 COMPONENT round_counter is
     Port ( clk : in  STD_LOGIC;
 			  en : in STD_LOGIC;
-           round : out  STD_LOGIC_VECTOR (4 downto 0));
+           round : out  STD_LOGIC_VECTOR (4 downto 0);
+			  start : out STD_LOGIC);
 END COMPONENT round_counter;
 
 signal feistel_input : STD_LOGIC_VECTOR(127 downto 0);
@@ -104,6 +105,8 @@ signal key_3 : STD_LOGIC_VECTOR(31 downto 0);
 
 signal next_state : STD_LOGIC_VECTOR(127 downto 0);
 
+signal start : STD_LOGIC;
+
 begin
 
 	sums_comp : sums PORT MAP(clk, en, sum_0, sum_1, sum_2, sum_3);
@@ -111,22 +114,15 @@ begin
 	
 	feistel 	 : feistel_net PORT MAP(clk, en, feistel_input, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3, next_state);
 	
-	round_count : round_counter PORT MAP(clk, en, round_s);
+	round_count : round_counter PORT MAP(clk, en, round_s, start);
 	
 	ct <= next_state;
 	round <= round_s;
 	sum <= sum_0;
 	
-	PROCESS(round_s)
-	
-	BEGIN
-			if round_s = "00000" then
-				feistel_input <= pt;
-			else
-				feistel_input <= next_state;
-			end if;
-		
-	END PROCESS;
+	with start select feistel_input <=
+		pt when '1',
+		next_state when others;
 end Behavioral;
 
 

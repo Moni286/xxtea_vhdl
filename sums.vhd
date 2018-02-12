@@ -48,7 +48,7 @@ signal sum_1s : STD_LOGIC_VECTOR(31 downto 0);
 signal sum_2s : STD_LOGIC_VECTOR(31 downto 0);
 signal sum_3s : STD_LOGIC_VECTOR(31 downto 0);
 
-signal counter : STD_LOGIC_VECTOR(1 downto 0);
+signal counter : STD_LOGIC_VECTOR(2 downto 0);
 
 begin
 	
@@ -59,21 +59,16 @@ begin
 		
 			if (en = '0') then
 				sum_0s <= x"9e3779b9";
-				sum_1s <= x"9e3779b9";
-				sum_2s <= x"9e3779b9";
-				sum_3s <= x"9e3779b9";
-				counter <= "00";
+				sum_1s <= x"00000000";
+				sum_2s <= x"00000000";
+				sum_3s <= x"00000000";
+				
 			else
 				
 				sum_1s <= sum_0s;
 				sum_2s <= sum_1s;
 				sum_3s <= sum_2s;
-				
-				if counter = "11" then
-					sum_0s <= STD_LOGIC_VECTOR(unsigned(sum_3s) + unsigned(DELTA));
-				else
-					counter <= STD_LOGIC_VECTOR(unsigned(counter) + 1);
-				end if;
+				sum_0s <= STD_LOGIC_VECTOR(unsigned(sum_3s) + unsigned(DELTA));
 			
 			end if;
 			

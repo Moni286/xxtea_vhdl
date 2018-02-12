@@ -72,15 +72,15 @@ signal sigma_2 : STD_LOGIC_VECTOR(31 downto 0);
 signal sigma_3 : STD_LOGIC_VECTOR(31 downto 0);
 
 begin
-	w0 <= state(31 downto 0);
-	w1 <= state(63 downto 32);
-	w2 <= state(95 downto 64);
-	w3 <= state(127 downto 96);
+--	w3 <= state(31 downto 0);
+--	w2 <= state(63 downto 32);
+--	w1 <= state(95 downto 64);
+--	w0 <= state(127 downto 96);
 	
-	mx_0 : mx_add PORT MAP(w3, w1, w0, sum_0, key_0, sigma_0);
-	mx_1 : mx_add PORT MAP(pl_reg0(31 downto 0), pl_reg0(95 downto 64), pl_reg0(63 downto 32), sum_1, key_1, sigma_1);
-	mx_2 : mx_add PORT MAP(pl_reg1(63 downto 32), pl_reg1(127 downto 96), pl_reg1(95 downto 64), sum_2, key_2, sigma_2);
-	mx_3 : mx_add PORT MAP(pl_reg2(95 downto 64), pl_reg2(31 downto 0), pl_reg2(127 downto 96), sum_3, key_3, sigma_3);
+	mx_0 : mx_add PORT MAP(state(31 downto 0), state(95 downto 64), state(127 downto 96), sum_0, key_0, sigma_0);
+	mx_1 : mx_add PORT MAP(pl_reg0(127 downto 96), pl_reg0(63 downto 32), pl_reg0(95 downto 64), sum_1, key_1, sigma_1);
+	mx_2 : mx_add PORT MAP(pl_reg1(95 downto 64), pl_reg1(31 downto 0), pl_reg1(63 downto 32), sum_2, key_2, sigma_2);
+	mx_3 : mx_add PORT MAP(pl_reg2(63 downto 32), pl_reg2(127 downto 96), pl_reg2(31 downto 0), sum_3, key_3, sigma_3);
 	
 	next_state <= pl_reg3;
 	
@@ -89,10 +89,10 @@ begin
 	BEGIN
 		if rising_edge(clk) then
 			if en = '1' then
-				pl_reg0 <= w3 & w2 & w1 & sigma_0;
-				pl_reg1 <= pl_reg0(127 downto 64) & sigma_1 & pl_reg0(31 downto 0);
-				pl_reg2 <= pl_reg1(127 downto 96) & sigma_2 & pl_reg1(63 downto 0);
-				pl_reg3 <= sigma_3 & pl_reg2(95 downto 0);
+				pl_reg0 <= sigma_0 & state(95 downto 0);
+				pl_reg1 <= pl_reg0(127 downto 96) & sigma_1 & pl_reg0(63 downto 0);
+				pl_reg2 <= pl_reg1(127 downto 64) & sigma_2 & pl_reg1(31 downto 0);
+				pl_reg3 <= pl_reg2(127 downto 32) & sigma_3;
 			end if;
 		end if;
 	END PROCESS;

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: xxtea_encrypt.prj
 
@@ -68,7 +68,7 @@ Automatic Register Balancing       : No
 ---- Target Options
 LUT Combining                      : Auto
 Reduce Control Sets                : Auto
-Add IO Buffers                     : YES
+Add IO Buffers                     : NO
 Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 16
 Register Duplication               : YES
@@ -108,12 +108,6 @@ Slice Utilization Ratio Delta      : 5
 Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx_add.vhd" into library work
 Parsing entity <mx_add>.
 Parsing architecture <Behavioral> of entity <mx_add>.
-Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_scheduler.vhd" into library work
-Parsing entity <key_scheduler>.
-Parsing architecture <Behavioral> of entity <key_scheduler>.
-Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_RAM.vhd" into library work
-Parsing entity <key_RAM>.
-Parsing architecture <Behavioral> of entity <key_ram>.
 Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\sums.vhd" into library work
 Parsing entity <sums>.
 Parsing architecture <Behavioral> of entity <sums>.
@@ -140,17 +134,11 @@ Elaborating entity <sums> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <key_module> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <key_scheduler> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <key_RAM> (architecture <Behavioral>) from library <work>.
-
 Elaborating entity <feistel_net> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <mx_add> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <round_counter> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd" Line 124: pt should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd" Line 126: next_state should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -158,6 +146,7 @@ WARNING:HDLCompiler:92 - "C:\Users\HP\Desktop\University\Academics\Capstone\XXTE
 
 Synthesizing Unit <xxtea_encrypt>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd".
+INFO:Xst:3210 - "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\xxtea_encrypt.vhd" line 117: Output port <start> of the instance <round_count> is unconnected or connected to loadless signal.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <xxtea_encrypt> synthesized.
@@ -167,23 +156,15 @@ Synthesizing Unit <sums>.
     Found 32-bit register for signal <sum_1s>.
     Found 32-bit register for signal <sum_2s>.
     Found 32-bit register for signal <sum_3s>.
-    Found 2-bit register for signal <counter>.
     Found 32-bit register for signal <sum_0s>.
-    Found 32-bit adder for signal <sum_3s[31]_PWR_5_o_add_1_OUT> created at line 73.
-    Found 2-bit adder for signal <counter[1]_GND_5_o_add_2_OUT> created at line 1241.
+    Found 32-bit adder for signal <sum_3s[31]_PWR_5_o_add_0_OUT> created at line 71.
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred 130 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 128 D-type flip-flop(s).
 Unit <sums> synthesized.
 
 Synthesizing Unit <key_module>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_module.vhd".
-    Summary:
-	no macro.
-Unit <key_module> synthesized.
-
-Synthesizing Unit <key_scheduler>.
-    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_scheduler.vhd".
 WARNING:Xst:647 - Input <sum_0<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum_0<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum_1<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -192,24 +173,15 @@ WARNING:Xst:647 - Input <sum_2<1:0>> is never used. This port will be preserved 
 WARNING:Xst:647 - Input <sum_2<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum_3<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <sum_3<31:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <w> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit 4-to-1 multiplexer for signal <key_0> created at line 90.
+    Found 32-bit 4-to-1 multiplexer for signal <key_1> created at line 96.
+    Found 32-bit 4-to-1 multiplexer for signal <key_2> created at line 102.
+    Found 32-bit 4-to-1 multiplexer for signal <key_3> created at line 108.
     Summary:
-	no macro.
-Unit <key_scheduler> synthesized.
-
-Synthesizing Unit <key_RAM>.
-    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\key_RAM.vhd".
-    Found 32-bit register for signal <key_s<1>>.
-    Found 32-bit register for signal <key_s<2>>.
-    Found 32-bit register for signal <key_s<3>>.
-    Found 32-bit register for signal <key_s<0>>.
-    Found 32-bit 4-to-1 multiplexer for signal <key_0> created at line 71.
-    Found 32-bit 4-to-1 multiplexer for signal <key_1> created at line 72.
-    Found 32-bit 4-to-1 multiplexer for signal <key_2> created at line 73.
-    Found 32-bit 4-to-1 multiplexer for signal <key_3> created at line 74.
-    Summary:
-	inferred 128 D-type flip-flop(s).
 	inferred   4 Multiplexer(s).
-Unit <key_RAM> synthesized.
+Unit <key_module> synthesized.
 
 Synthesizing Unit <feistel_net>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx.vhd".
@@ -232,28 +204,29 @@ Unit <mx_add> synthesized.
 
 Synthesizing Unit <round_counter>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\round_counter.vhd".
+    Found 2-bit register for signal <counter>.
+    Found 1-bit register for signal <start_s>.
     Found 5-bit register for signal <round_s>.
-    Found 2-bit register for signal <_n0026>.
-    Found 32-bit adder for signal <n0012> created at line 53.
-    Found 5-bit adder for signal <round_s[4]_GND_11_o_add_3_OUT> created at line 1241.
-    WARNING:Xst:2404 -  FFs/Latches <counter<31:2>> (without init value) have a constant value of 0 in block <round_counter>.
+    Found 5-bit adder for signal <round_s[4]_GND_9_o_add_2_OUT> created at line 1241.
+    Found 2-bit adder for signal <counter[1]_GND_9_o_add_3_OUT> created at line 1241.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred   7 D-type flip-flop(s).
+	inferred   8 D-type flip-flop(s).
 Unit <round_counter> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 16
+# Adders/Subtractors                                   : 15
  2-bit adder                                           : 1
- 32-bit adder                                          : 14
+ 32-bit adder                                          : 13
  5-bit adder                                           : 1
-# Registers                                            : 15
+# Registers                                            : 11
+ 1-bit register                                        : 1
  128-bit register                                      : 4
- 2-bit register                                        : 2
- 32-bit register                                       : 8
+ 2-bit register                                        : 1
+ 32-bit register                                       : 4
  5-bit register                                        : 1
 # Multiplexers                                         : 5
  128-bit 2-to-1 multiplexer                            : 1
@@ -269,13 +242,9 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <round_counter>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
 The following registers are absorbed into counter <round_s>: 1 register on signal <round_s>.
-The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
 Unit <round_counter> synthesized (advanced).
-
-Synthesizing (advanced) Unit <sums>.
-The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
-Unit <sums> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -283,11 +252,11 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 13
  32-bit adder                                          : 13
-# Counters                                             : 3
- 2-bit up counter                                      : 2
+# Counters                                             : 2
+ 2-bit up counter                                      : 1
  5-bit up counter                                      : 1
-# Registers                                            : 768
- Flip-Flops                                            : 768
+# Registers                                            : 641
+ Flip-Flops                                            : 641
 # Multiplexers                                         : 5
  128-bit 2-to-1 multiplexer                            : 1
  32-bit 4-to-1 multiplexer                             : 4
@@ -299,98 +268,99 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:2677 - Node <round_count/start_s> of sequential type is unconnected in block <xxtea_encrypt>.
 
 Optimizing unit <feistel_net> ...
 
 Optimizing unit <xxtea_encrypt> ...
 
-Optimizing unit <key_RAM> ...
+Optimizing unit <sums> ...
 
 Optimizing unit <mx_add> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block xxtea_encrypt, actual ratio is 17.
+Found area constraint ratio of 100 (+ 5) on block xxtea_encrypt, actual ratio is 16.
 
 Final Macro Processing ...
 
 Processing Unit <xxtea_encrypt> :
-	Found 2-bit shift register for signal <feistel/pl_reg3_63>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_62>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_61>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_60>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_59>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_58>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_57>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_56>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_55>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_54>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_53>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_52>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_51>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_50>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_49>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_48>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_47>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_46>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_45>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_44>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_43>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_42>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_41>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_40>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_39>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_38>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_37>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_36>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_35>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_34>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_33>.
-	Found 2-bit shift register for signal <feistel/pl_reg3_32>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_31>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_30>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_29>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_28>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_27>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_26>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_25>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_24>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_23>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_22>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_21>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_20>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_19>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_18>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_17>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_16>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_15>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_14>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_13>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_12>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_11>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_10>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_9>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_8>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_7>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_6>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_5>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_4>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_3>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_2>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_1>.
-	Found 2-bit shift register for signal <feistel/pl_reg2_0>.
-	Found 2-bit shift register for signal <feistel/pl_reg1_127>.
-	Found 2-bit shift register for signal <feistel/pl_reg1_126>.
-	Found 2-bit shift register for signal <feistel/pl_reg1_102>.
-	Found 2-bit shift register for signal <feistel/pl_reg1_101>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_95>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_94>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_93>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_92>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_91>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_90>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_89>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_88>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_87>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_86>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_85>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_84>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_83>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_82>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_81>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_80>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_79>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_78>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_77>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_76>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_75>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_74>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_73>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_72>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_71>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_70>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_69>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_68>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_67>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_66>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_65>.
+	Found 2-bit shift register for signal <feistel/pl_reg3_64>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_127>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_126>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_125>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_124>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_123>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_122>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_121>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_120>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_119>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_118>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_117>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_116>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_115>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_114>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_113>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_112>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_111>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_110>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_109>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_108>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_107>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_106>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_105>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_104>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_103>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_102>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_101>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_100>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_99>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_98>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_97>.
+	Found 2-bit shift register for signal <feistel/pl_reg2_96>.
+	Found 2-bit shift register for signal <feistel/pl_reg1_31>.
+	Found 2-bit shift register for signal <feistel/pl_reg1_30>.
+	Found 2-bit shift register for signal <feistel/pl_reg1_6>.
+	Found 2-bit shift register for signal <feistel/pl_reg1_5>.
 Unit <xxtea_encrypt> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 641
- Flip-Flops                                            : 641
+# Registers                                            : 511
+ Flip-Flops                                            : 511
 # Shift Registers                                      : 68
  2-bit shift register                                  : 68
 
@@ -415,29 +385,25 @@ Top Level Output File Name         : xxtea_encrypt.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1792
+# BELS                             : 1789
 #      GND                         : 1
-#      INV                         : 24
+#      INV                         : 23
 #      LUT1                        : 12
-#      LUT2                        : 223
-#      LUT3                        : 236
+#      LUT2                        : 220
+#      LUT3                        : 237
 #      LUT4                        : 220
 #      LUT5                        : 69
 #      LUT6                        : 187
 #      MUXCY                       : 403
 #      VCC                         : 1
 #      XORCY                       : 416
-# FlipFlops/Latches                : 709
-#      FDE                         : 572
-#      FDR                         : 98
-#      FDRE                        : 39
+# FlipFlops/Latches                : 579
+#      FDE                         : 444
+#      FDR                         : 110
+#      FDRE                        : 5
+#      FDS                         : 20
 # Shift Registers                  : 68
 #      SRLC16E                     : 68
-# Clock Buffers                    : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 423
-#      IBUF                        : 258
-#      OBUF                        : 165
 
 Device utilization summary:
 ---------------------------
@@ -446,27 +412,24 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             709  out of  18224     3%  
- Number of Slice LUTs:                 1039  out of   9112    11%  
-    Number used as Logic:               971  out of   9112    10%  
+ Number of Slice Registers:             579  out of  18224     3%  
+ Number of Slice LUTs:                 1036  out of   9112    11%  
+    Number used as Logic:               968  out of   9112    10%  
     Number used as Memory:               68  out of   2176     3%  
        Number used as SRL:               68
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1262
-   Number with an unused Flip Flop:     553  out of   1262    43%  
-   Number with an unused LUT:           223  out of   1262    17%  
-   Number of fully used LUT-FF pairs:   486  out of   1262    38%  
-   Number of unique control sets:         6
+ Number of LUT Flip Flop pairs used:   1195
+   Number with an unused Flip Flop:     616  out of   1195    51%  
+   Number with an unused LUT:           159  out of   1195    13%  
+   Number of fully used LUT-FF pairs:   420  out of   1195    35%  
+   Number of unique control sets:         4
 
 IO Utilization: 
  Number of IOs:                         424
- Number of bonded IOBs:                 424  out of    232   182% (*) 
+ Number of bonded IOBs:                   0  out of    232     0%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
-
-WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
 
 ---------------------------
 Partition Resource Summary:
@@ -486,11 +449,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 777   |
------------------------------------+------------------------+-------+
+-----------------------------------+----------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)      | Load  |
+-----------------------------------+----------------------------+-------+
+clk                                | NONE(round_count/counter_0)| 647   |
+-----------------------------------+----------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -500,9 +464,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 6.841ns (Maximum Frequency: 146.172MHz)
-   Minimum input arrival time before clock: 6.823ns
-   Maximum output required time after clock: 5.023ns
+   Minimum period: 6.807ns (Maximum Frequency: 146.902MHz)
+   Minimum input arrival time before clock: 4.380ns
+   Maximum output required time after clock: 0.525ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -511,22 +475,22 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.841ns (frequency: 146.172MHz)
-  Total number of paths / destination ports: 507791 / 688
+  Clock period: 6.807ns (frequency: 146.902MHz)
+  Total number of paths / destination ports: 411980 / 654
 -------------------------------------------------------------------------
-Delay:               6.841ns (Levels of Logic = 36)
+Delay:               6.807ns (Levels of Logic = 36)
   Source:            round_count/round_s_4 (FF)
-  Destination:       feistel/pl_reg0_31 (FF)
+  Destination:       feistel/pl_reg0_127 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: round_count/round_s_4 to feistel/pl_reg0_31
+  Data Path: round_count/round_s_4 to feistel/pl_reg0_127
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             8   0.525   1.374  round_count/round_s_4 (round_count/round_s_4)
-     LUT5:I0->O           19   0.254   1.261  Mmux_feistel_input1291_1 (Mmux_feistel_input1291)
-     LUT3:I2->O            1   0.254   0.681  Mmux_feistel_input310 (feistel_input<101>)
+     FDRE:C->Q             7   0.525   1.340  round_count/round_s_4 (round_count/round_s_4)
+     LUT5:I0->O           19   0.254   1.261  GND_3_o_round_s[4]_equal_4_o<4>1_1 (GND_3_o_round_s[4]_equal_4_o<4>1)
+     LUT3:I2->O            1   0.254   0.681  Mmux_feistel_input841 (feistel_input<5>)
      MUXCY:DI->O           1   0.181   0.000  feistel/mx_0/Madd_x_cy<0> (feistel/mx_0/Madd_x_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<1> (feistel/mx_0/Madd_x_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_x_cy<2> (feistel/mx_0/Madd_x_cy<2>)
@@ -561,49 +525,82 @@ Delay:               6.841ns (Levels of Logic = 36)
      LUT5:I4->O            1   0.254   0.000  feistel/mx_0/Madd_sigma_lut<30> (feistel/mx_0/Madd_sigma_lut<30>)
      MUXCY:S->O            0   0.215   0.000  feistel/mx_0/Madd_sigma_cy<30> (feistel/mx_0/Madd_sigma_cy<30>)
      XORCY:CI->O           1   0.206   0.000  feistel/mx_0/Madd_sigma_xor<31> (feistel/sigma_0<31>)
-     FDE:D                     0.074          feistel/pl_reg0_31
+     FDE:D                     0.074          feistel/pl_reg0_127
     ----------------------------------------
-    Total                      6.841ns (2.843ns logic, 3.998ns route)
-                                       (41.6% logic, 58.4% route)
+    Total                      6.807ns (2.843ns logic, 3.964ns route)
+                                       (41.8% logic, 58.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 50323 / 1033
+  Total number of paths / destination ports: 145809 / 871
 -------------------------------------------------------------------------
-Offset:              6.823ns (Levels of Logic = 2)
-  Source:            en (PAD)
-  Destination:       sums_comp/sum_1s_31 (FF)
+Offset:              4.380ns (Levels of Logic = 36)
+  Source:            pt<64> (PAD)
+  Destination:       feistel/pl_reg0_127 (FF)
   Destination Clock: clk rising
 
-  Data Path: en to sums_comp/sum_1s_31
+  Data Path: pt<64> to feistel/pl_reg0_127
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           513   1.328   2.459  en_IBUF (en_IBUF)
-     INV:I->O            137   0.255   2.322  en_inv1_INV_0 (en_inv)
-     FDRE:R                    0.459          sums_comp/counter_0
+     LUT2:I0->O            1   0.250   1.137  feistel/mx_0/Madd_a_lut<0>_SW0 (N01)
+     LUT6:I0->O            1   0.254   0.000  feistel/mx_0/Madd_a_lut<0> (feistel/mx_0/Madd_a_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  feistel/mx_0/Madd_a_cy<0> (feistel/mx_0/Madd_a_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<1> (feistel/mx_0/Madd_a_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<2> (feistel/mx_0/Madd_a_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<3> (feistel/mx_0/Madd_a_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<4> (feistel/mx_0/Madd_a_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<5> (feistel/mx_0/Madd_a_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<6> (feistel/mx_0/Madd_a_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<7> (feistel/mx_0/Madd_a_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<8> (feistel/mx_0/Madd_a_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<9> (feistel/mx_0/Madd_a_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<10> (feistel/mx_0/Madd_a_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<11> (feistel/mx_0/Madd_a_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<12> (feistel/mx_0/Madd_a_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<13> (feistel/mx_0/Madd_a_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<14> (feistel/mx_0/Madd_a_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<15> (feistel/mx_0/Madd_a_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<16> (feistel/mx_0/Madd_a_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<17> (feistel/mx_0/Madd_a_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<18> (feistel/mx_0/Madd_a_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<19> (feistel/mx_0/Madd_a_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<20> (feistel/mx_0/Madd_a_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<21> (feistel/mx_0/Madd_a_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<22> (feistel/mx_0/Madd_a_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<23> (feistel/mx_0/Madd_a_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<24> (feistel/mx_0/Madd_a_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<25> (feistel/mx_0/Madd_a_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<26> (feistel/mx_0/Madd_a_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<27> (feistel/mx_0/Madd_a_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<28> (feistel/mx_0/Madd_a_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<29> (feistel/mx_0/Madd_a_cy<29>)
+     XORCY:CI->O           1   0.206   0.790  feistel/mx_0/Madd_a_xor<30> (feistel/mx_0/a<30>)
+     LUT5:I3->O            1   0.250   0.000  feistel/mx_0/Madd_sigma_lut<30> (feistel/mx_0/Madd_sigma_lut<30>)
+     MUXCY:S->O            0   0.215   0.000  feistel/mx_0/Madd_sigma_cy<30> (feistel/mx_0/Madd_sigma_cy<30>)
+     XORCY:CI->O           1   0.206   0.000  feistel/mx_0/Madd_sigma_xor<31> (feistel/sigma_0<31>)
+     FDE:D                     0.074          feistel/pl_reg0_127
     ----------------------------------------
-    Total                      6.823ns (2.042ns logic, 4.781ns route)
-                                       (29.9% logic, 70.1% route)
+    Total                      4.380ns (2.453ns logic, 1.927ns route)
+                                       (56.0% logic, 44.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 165 / 165
 -------------------------------------------------------------------------
-Offset:              5.023ns (Levels of Logic = 1)
-  Source:            sums_comp/sum_0s_3 (FF)
-  Destination:       sum<3> (PAD)
+Offset:              0.525ns (Levels of Logic = 0)
+  Source:            feistel/pl_reg3_127 (FF)
+  Destination:       ct<127> (PAD)
   Source Clock:      clk rising
 
-  Data Path: sums_comp/sum_0s_3 to sum<3>
+  Data Path: feistel/pl_reg3_127 to ct<127>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            36   0.525   1.586  sums_comp/sum_0s_3 (sums_comp/sum_0s_3)
-     OBUF:I->O                 2.912          sum_3_OBUF (sum<3>)
+     FDE:C->Q              1   0.525   0.000  feistel/pl_reg3_127 (feistel/pl_reg3_127)
     ----------------------------------------
-    Total                      5.023ns (3.437ns logic, 1.586ns route)
-                                       (68.4% logic, 31.6% route)
+    Total                      0.525ns (0.525ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
 
 =========================================================================
 
@@ -615,20 +612,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    6.841|         |         |         |
+clk            |    6.807|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.59 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.22 secs
  
 --> 
 
-Total memory usage is 267868 kilobytes
+Total memory usage is 266652 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   12 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :   11 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

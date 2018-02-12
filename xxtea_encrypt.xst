@@ -38,7 +38,7 @@ run
 -async_to_sync NO
 -shreg_min_size 2
 -use_dsp48 Auto
--iobuf YES
+-iobuf NO
 -max_fanout 100000
 -bufg 16
 -register_duplication YES

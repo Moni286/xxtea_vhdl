@@ -11,3 +11,40 @@ xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-2 xxtea_encrypt.ngc xxtea_encrypt.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o xxtea_encrypt_map.ncd xxtea_encrypt.ngd xxtea_encrypt.pcf 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-2 xxtea_encrypt.ngc xxtea_encrypt.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -u -lc off -power off -o xxtea_encrypt_map.ncd xxtea_encrypt.ngd xxtea_encrypt.pcf 
+par -w -intstyle ise -ol high -mt off xxtea_encrypt_map.ncd xxtea_encrypt.ncd xxtea_encrypt.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml xxtea_encrypt.twx xxtea_encrypt.ncd -o xxtea_encrypt.twr xxtea_encrypt.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc xxtea_encrypt.ucf -p xc6slx16-csg324-2 xxtea_encrypt.ngc xxtea_encrypt.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -u -lc off -power off -o xxtea_encrypt_map.ncd xxtea_encrypt.ngd xxtea_encrypt.pcf 
+par -w -intstyle ise -ol high -mt off xxtea_encrypt_map.ncd xxtea_encrypt.ncd xxtea_encrypt.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml xxtea_encrypt.twx xxtea_encrypt.ncd -o xxtea_encrypt.twr xxtea_encrypt.pcf -ucf xxtea_encrypt.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc xxtea_encrypt.ucf -p xc6slx16-csg324-2 xxtea_encrypt.ngc xxtea_encrypt.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -u -lc off -power off -o xxtea_encrypt_map.ncd xxtea_encrypt.ngd xxtea_encrypt.pcf 
+par -w -intstyle ise -ol high -mt off xxtea_encrypt_map.ncd xxtea_encrypt.ncd xxtea_encrypt.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml xxtea_encrypt.twx xxtea_encrypt.ncd -o xxtea_encrypt.twr xxtea_encrypt.pcf -ucf xxtea_encrypt.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc xxtea_encrypt.ucf -p xc6slx16-csg324-2 xxtea_encrypt.ngc xxtea_encrypt.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -u -lc off -power off -o xxtea_encrypt_map.ncd xxtea_encrypt.ngd xxtea_encrypt.pcf 
+par -w -intstyle ise -ol high -mt off xxtea_encrypt_map.ncd xxtea_encrypt.ncd xxtea_encrypt.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml xxtea_encrypt.twx xxtea_encrypt.ncd -o xxtea_encrypt.twr xxtea_encrypt.pcf -ucf xxtea_encrypt.ucf 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc xxtea_encrypt.ucf -p xc6slx16-csg324-2 xxtea_encrypt.ngc xxtea_encrypt.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -u -lc off -power off -o xxtea_encrypt_map.ncd xxtea_encrypt.ngd xxtea_encrypt.pcf 
+par -w -intstyle ise -ol high -mt off xxtea_encrypt_map.ncd xxtea_encrypt.ncd xxtea_encrypt.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml xxtea_encrypt.twx xxtea_encrypt.ncd -o xxtea_encrypt.twr xxtea_encrypt.pcf -ucf xxtea_encrypt.ucf 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc xxtea_encrypt.ucf -p xc6slx16-csg324-2 xxtea_encrypt.ngc xxtea_encrypt.ngd  
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc xxtea_encrypt.ucf -p xc6slx16-csg324-2 xxtea_encrypt.ngc xxtea_encrypt.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -u -lc off -power off -o xxtea_encrypt_map.ncd xxtea_encrypt.ngd xxtea_encrypt.pcf 
+par -w -intstyle ise -ol high -mt off xxtea_encrypt_map.ncd xxtea_encrypt.ncd xxtea_encrypt.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml xxtea_encrypt.twx xxtea_encrypt.ncd -o xxtea_encrypt.twr xxtea_encrypt.pcf -ucf xxtea_encrypt.ucf 

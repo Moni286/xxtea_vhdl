@@ -1,0 +1,29 @@
+Command line:
+   round_counter_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49503
+
+Mon Feb 12 13:33:48 2018
+
+
+ Elaboration Time: 0.031201 sec
+
+ Current Memory Usage: 669.667 Meg
+
+ Total Signals          : 7
+ Total Nets             : 16
+ Total Signal Drivers   : 5
+ Total Blocks           : 3
+ Total Primitive Blocks : 3
+ Total Processes        : 3
+ Total Traceable Variables  : 13
+ Total Scalar Nets and Variables : 499
+Total Line Count : 12
+
+ Total Simulation Time: 0.031201 sec
+
+ Current Memory Usage: 669.667 Meg
+
+Mon Feb 12 13:33:51 2018
+

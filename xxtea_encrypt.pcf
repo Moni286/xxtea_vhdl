@@ -1,0 +1,296 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Feb 12 13:42:24 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+TIMEGRP clk = BEL "round_count/counter_0" BEL "round_count/counter_1" BEL
+        "round_count/round_s_0" BEL "round_count/round_s_1" BEL
+        "round_count/round_s_2" BEL "round_count/round_s_3" BEL
+        "round_count/round_s_4" BEL "sums_comp/sum_1s_31" BEL
+        "sums_comp/sum_1s_30" BEL "sums_comp/sum_1s_29" BEL
+        "sums_comp/sum_1s_28" BEL "sums_comp/sum_1s_27" BEL
+        "sums_comp/sum_1s_26" BEL "sums_comp/sum_1s_25" BEL
+        "sums_comp/sum_1s_24" BEL "sums_comp/sum_1s_23" BEL
+        "sums_comp/sum_1s_22" BEL "sums_comp/sum_1s_21" BEL
+        "sums_comp/sum_1s_20" BEL "sums_comp/sum_1s_19" BEL
+        "sums_comp/sum_1s_18" BEL "sums_comp/sum_1s_17" BEL
+        "sums_comp/sum_1s_16" BEL "sums_comp/sum_1s_15" BEL
+        "sums_comp/sum_1s_14" BEL "sums_comp/sum_1s_13" BEL
+        "sums_comp/sum_1s_12" BEL "sums_comp/sum_1s_11" BEL
+        "sums_comp/sum_1s_10" BEL "sums_comp/sum_1s_9" BEL
+        "sums_comp/sum_1s_8" BEL "sums_comp/sum_1s_7" BEL "sums_comp/sum_1s_6"
+        BEL "sums_comp/sum_1s_5" BEL "sums_comp/sum_1s_4" BEL
+        "sums_comp/sum_1s_3" BEL "sums_comp/sum_1s_2" BEL "sums_comp/sum_1s_1"
+        BEL "sums_comp/sum_1s_0" BEL "sums_comp/sum_0s_31" BEL
+        "sums_comp/sum_0s_30" BEL "sums_comp/sum_0s_29" BEL
+        "sums_comp/sum_0s_28" BEL "sums_comp/sum_0s_27" BEL
+        "sums_comp/sum_0s_26" BEL "sums_comp/sum_0s_25" BEL
+        "sums_comp/sum_0s_24" BEL "sums_comp/sum_0s_23" BEL
+        "sums_comp/sum_0s_22" BEL "sums_comp/sum_0s_21" BEL
+        "sums_comp/sum_0s_20" BEL "sums_comp/sum_0s_19" BEL
+        "sums_comp/sum_0s_18" BEL "sums_comp/sum_0s_17" BEL
+        "sums_comp/sum_0s_16" BEL "sums_comp/sum_0s_15" BEL
+        "sums_comp/sum_0s_14" BEL "sums_comp/sum_0s_13" BEL
+        "sums_comp/sum_0s_12" BEL "sums_comp/sum_0s_11" BEL
+        "sums_comp/sum_0s_10" BEL "sums_comp/sum_0s_9" BEL
+        "sums_comp/sum_0s_8" BEL "sums_comp/sum_0s_7" BEL "sums_comp/sum_0s_6"
+        BEL "sums_comp/sum_0s_5" BEL "sums_comp/sum_0s_4" BEL
+        "sums_comp/sum_0s_3" BEL "sums_comp/sum_0s_2" BEL "sums_comp/sum_0s_1"
+        BEL "sums_comp/sum_0s_0" BEL "sums_comp/sum_3s_31" BEL
+        "sums_comp/sum_3s_30" BEL "sums_comp/sum_3s_29" BEL
+        "sums_comp/sum_3s_28" BEL "sums_comp/sum_3s_27" BEL
+        "sums_comp/sum_3s_26" BEL "sums_comp/sum_3s_25" BEL
+        "sums_comp/sum_3s_24" BEL "sums_comp/sum_3s_23" BEL
+        "sums_comp/sum_3s_22" BEL "sums_comp/sum_3s_21" BEL
+        "sums_comp/sum_3s_20" BEL "sums_comp/sum_3s_19" BEL
+        "sums_comp/sum_3s_18" BEL "sums_comp/sum_3s_17" BEL
+        "sums_comp/sum_3s_16" BEL "sums_comp/sum_3s_15" BEL
+        "sums_comp/sum_3s_14" BEL "sums_comp/sum_3s_13" BEL
+        "sums_comp/sum_3s_12" BEL "sums_comp/sum_3s_11" BEL
+        "sums_comp/sum_3s_10" BEL "sums_comp/sum_3s_9" BEL
+        "sums_comp/sum_3s_8" BEL "sums_comp/sum_3s_7" BEL "sums_comp/sum_3s_6"
+        BEL "sums_comp/sum_3s_5" BEL "sums_comp/sum_3s_4" BEL
+        "sums_comp/sum_3s_3" BEL "sums_comp/sum_3s_2" BEL "sums_comp/sum_3s_1"
+        BEL "sums_comp/sum_3s_0" BEL "sums_comp/sum_2s_31" BEL
+        "sums_comp/sum_2s_30" BEL "sums_comp/sum_2s_29" BEL
+        "sums_comp/sum_2s_28" BEL "sums_comp/sum_2s_27" BEL
+        "sums_comp/sum_2s_26" BEL "sums_comp/sum_2s_25" BEL
+        "sums_comp/sum_2s_24" BEL "sums_comp/sum_2s_23" BEL
+        "sums_comp/sum_2s_22" BEL "sums_comp/sum_2s_21" BEL
+        "sums_comp/sum_2s_20" BEL "sums_comp/sum_2s_19" BEL
+        "sums_comp/sum_2s_18" BEL "sums_comp/sum_2s_17" BEL
+        "sums_comp/sum_2s_16" BEL "sums_comp/sum_2s_15" BEL
+        "sums_comp/sum_2s_14" BEL "sums_comp/sum_2s_13" BEL
+        "sums_comp/sum_2s_12" BEL "sums_comp/sum_2s_11" BEL
+        "sums_comp/sum_2s_10" BEL "sums_comp/sum_2s_9" BEL
+        "sums_comp/sum_2s_8" BEL "sums_comp/sum_2s_7" BEL "sums_comp/sum_2s_6"
+        BEL "sums_comp/sum_2s_5" BEL "sums_comp/sum_2s_4" BEL
+        "sums_comp/sum_2s_3" BEL "sums_comp/sum_2s_2" BEL "sums_comp/sum_2s_1"
+        BEL "sums_comp/sum_2s_0" BEL "feistel/pl_reg3_127" BEL
+        "feistel/pl_reg3_126" BEL "feistel/pl_reg3_125" BEL
+        "feistel/pl_reg3_124" BEL "feistel/pl_reg3_123" BEL
+        "feistel/pl_reg3_122" BEL "feistel/pl_reg3_121" BEL
+        "feistel/pl_reg3_120" BEL "feistel/pl_reg3_119" BEL
+        "feistel/pl_reg3_118" BEL "feistel/pl_reg3_117" BEL
+        "feistel/pl_reg3_116" BEL "feistel/pl_reg3_115" BEL
+        "feistel/pl_reg3_114" BEL "feistel/pl_reg3_113" BEL
+        "feistel/pl_reg3_112" BEL "feistel/pl_reg3_111" BEL
+        "feistel/pl_reg3_110" BEL "feistel/pl_reg3_109" BEL
+        "feistel/pl_reg3_108" BEL "feistel/pl_reg3_107" BEL
+        "feistel/pl_reg3_106" BEL "feistel/pl_reg3_105" BEL
+        "feistel/pl_reg3_104" BEL "feistel/pl_reg3_103" BEL
+        "feistel/pl_reg3_102" BEL "feistel/pl_reg3_101" BEL
+        "feistel/pl_reg3_100" BEL "feistel/pl_reg3_99" BEL
+        "feistel/pl_reg3_98" BEL "feistel/pl_reg3_97" BEL "feistel/pl_reg3_96"
+        BEL "feistel/pl_reg3_63" BEL "feistel/pl_reg3_62" BEL
+        "feistel/pl_reg3_61" BEL "feistel/pl_reg3_60" BEL "feistel/pl_reg3_59"
+        BEL "feistel/pl_reg3_58" BEL "feistel/pl_reg3_57" BEL
+        "feistel/pl_reg3_56" BEL "feistel/pl_reg3_55" BEL "feistel/pl_reg3_54"
+        BEL "feistel/pl_reg3_53" BEL "feistel/pl_reg3_52" BEL
+        "feistel/pl_reg3_51" BEL "feistel/pl_reg3_50" BEL "feistel/pl_reg3_49"
+        BEL "feistel/pl_reg3_48" BEL "feistel/pl_reg3_47" BEL
+        "feistel/pl_reg3_46" BEL "feistel/pl_reg3_45" BEL "feistel/pl_reg3_44"
+        BEL "feistel/pl_reg3_43" BEL "feistel/pl_reg3_42" BEL
+        "feistel/pl_reg3_41" BEL "feistel/pl_reg3_40" BEL "feistel/pl_reg3_39"
+        BEL "feistel/pl_reg3_38" BEL "feistel/pl_reg3_37" BEL
+        "feistel/pl_reg3_36" BEL "feistel/pl_reg3_35" BEL "feistel/pl_reg3_34"
+        BEL "feistel/pl_reg3_33" BEL "feistel/pl_reg3_32" BEL
+        "feistel/pl_reg3_31" BEL "feistel/pl_reg3_30" BEL "feistel/pl_reg3_29"
+        BEL "feistel/pl_reg3_28" BEL "feistel/pl_reg3_27" BEL
+        "feistel/pl_reg3_26" BEL "feistel/pl_reg3_25" BEL "feistel/pl_reg3_24"
+        BEL "feistel/pl_reg3_23" BEL "feistel/pl_reg3_22" BEL
+        "feistel/pl_reg3_21" BEL "feistel/pl_reg3_20" BEL "feistel/pl_reg3_19"
+        BEL "feistel/pl_reg3_18" BEL "feistel/pl_reg3_17" BEL
+        "feistel/pl_reg3_16" BEL "feistel/pl_reg3_15" BEL "feistel/pl_reg3_14"
+        BEL "feistel/pl_reg3_13" BEL "feistel/pl_reg3_12" BEL
+        "feistel/pl_reg3_11" BEL "feistel/pl_reg3_10" BEL "feistel/pl_reg3_9"
+        BEL "feistel/pl_reg3_8" BEL "feistel/pl_reg3_7" BEL
+        "feistel/pl_reg3_6" BEL "feistel/pl_reg3_5" BEL "feistel/pl_reg3_4"
+        BEL "feistel/pl_reg3_3" BEL "feistel/pl_reg3_2" BEL
+        "feistel/pl_reg3_1" BEL "feistel/pl_reg3_0" BEL "feistel/pl_reg2_63"
+        BEL "feistel/pl_reg2_62" BEL "feistel/pl_reg2_61" BEL
+        "feistel/pl_reg2_60" BEL "feistel/pl_reg2_59" BEL "feistel/pl_reg2_58"
+        BEL "feistel/pl_reg2_57" BEL "feistel/pl_reg2_56" BEL
+        "feistel/pl_reg2_55" BEL "feistel/pl_reg2_54" BEL "feistel/pl_reg2_53"
+        BEL "feistel/pl_reg2_52" BEL "feistel/pl_reg2_51" BEL
+        "feistel/pl_reg2_50" BEL "feistel/pl_reg2_49" BEL "feistel/pl_reg2_48"
+        BEL "feistel/pl_reg2_47" BEL "feistel/pl_reg2_46" BEL
+        "feistel/pl_reg2_45" BEL "feistel/pl_reg2_44" BEL "feistel/pl_reg2_43"
+        BEL "feistel/pl_reg2_42" BEL "feistel/pl_reg2_41" BEL
+        "feistel/pl_reg2_40" BEL "feistel/pl_reg2_39" BEL "feistel/pl_reg2_38"
+        BEL "feistel/pl_reg2_37" BEL "feistel/pl_reg2_36" BEL
+        "feistel/pl_reg2_35" BEL "feistel/pl_reg2_34" BEL "feistel/pl_reg2_33"
+        BEL "feistel/pl_reg2_32" BEL "feistel/pl_reg2_31" BEL
+        "feistel/pl_reg2_30" BEL "feistel/pl_reg2_29" BEL "feistel/pl_reg2_28"
+        BEL "feistel/pl_reg2_27" BEL "feistel/pl_reg2_26" BEL
+        "feistel/pl_reg2_25" BEL "feistel/pl_reg2_24" BEL "feistel/pl_reg2_23"
+        BEL "feistel/pl_reg2_22" BEL "feistel/pl_reg2_21" BEL
+        "feistel/pl_reg2_20" BEL "feistel/pl_reg2_19" BEL "feistel/pl_reg2_18"
+        BEL "feistel/pl_reg2_17" BEL "feistel/pl_reg2_16" BEL
+        "feistel/pl_reg2_15" BEL "feistel/pl_reg2_14" BEL "feistel/pl_reg2_13"
+        BEL "feistel/pl_reg2_12" BEL "feistel/pl_reg2_11" BEL
+        "feistel/pl_reg2_10" BEL "feistel/pl_reg2_9" BEL "feistel/pl_reg2_8"
+        BEL "feistel/pl_reg2_7" BEL "feistel/pl_reg2_6" BEL
+        "feistel/pl_reg2_5" BEL "feistel/pl_reg2_4" BEL "feistel/pl_reg2_3"
+        BEL "feistel/pl_reg2_2" BEL "feistel/pl_reg2_1" BEL
+        "feistel/pl_reg2_0" BEL "feistel/pl_reg1_95" BEL "feistel/pl_reg1_94"
+        BEL "feistel/pl_reg1_93" BEL "feistel/pl_reg1_92" BEL
+        "feistel/pl_reg1_91" BEL "feistel/pl_reg1_90" BEL "feistel/pl_reg1_89"
+        BEL "feistel/pl_reg1_88" BEL "feistel/pl_reg1_87" BEL
+        "feistel/pl_reg1_86" BEL "feistel/pl_reg1_85" BEL "feistel/pl_reg1_84"
+        BEL "feistel/pl_reg1_83" BEL "feistel/pl_reg1_82" BEL
+        "feistel/pl_reg1_81" BEL "feistel/pl_reg1_80" BEL "feistel/pl_reg1_79"
+        BEL "feistel/pl_reg1_78" BEL "feistel/pl_reg1_77" BEL
+        "feistel/pl_reg1_76" BEL "feistel/pl_reg1_75" BEL "feistel/pl_reg1_74"
+        BEL "feistel/pl_reg1_73" BEL "feistel/pl_reg1_72" BEL
+        "feistel/pl_reg1_71" BEL "feistel/pl_reg1_70" BEL "feistel/pl_reg1_69"
+        BEL "feistel/pl_reg1_68" BEL "feistel/pl_reg1_67" BEL
+        "feistel/pl_reg1_66" BEL "feistel/pl_reg1_65" BEL "feistel/pl_reg1_64"
+        BEL "feistel/pl_reg1_63" BEL "feistel/pl_reg1_62" BEL
+        "feistel/pl_reg1_61" BEL "feistel/pl_reg1_60" BEL "feistel/pl_reg1_59"
+        BEL "feistel/pl_reg1_58" BEL "feistel/pl_reg1_57" BEL
+        "feistel/pl_reg1_56" BEL "feistel/pl_reg1_55" BEL "feistel/pl_reg1_54"
+        BEL "feistel/pl_reg1_53" BEL "feistel/pl_reg1_52" BEL
+        "feistel/pl_reg1_51" BEL "feistel/pl_reg1_50" BEL "feistel/pl_reg1_49"
+        BEL "feistel/pl_reg1_48" BEL "feistel/pl_reg1_47" BEL
+        "feistel/pl_reg1_46" BEL "feistel/pl_reg1_45" BEL "feistel/pl_reg1_44"
+        BEL "feistel/pl_reg1_43" BEL "feistel/pl_reg1_42" BEL
+        "feistel/pl_reg1_41" BEL "feistel/pl_reg1_40" BEL "feistel/pl_reg1_39"
+        BEL "feistel/pl_reg1_38" BEL "feistel/pl_reg1_37" BEL
+        "feistel/pl_reg1_36" BEL "feistel/pl_reg1_35" BEL "feistel/pl_reg1_34"
+        BEL "feistel/pl_reg1_33" BEL "feistel/pl_reg1_32" BEL
+        "feistel/pl_reg1_29" BEL "feistel/pl_reg1_28" BEL "feistel/pl_reg1_27"
+        BEL "feistel/pl_reg1_26" BEL "feistel/pl_reg1_25" BEL
+        "feistel/pl_reg1_24" BEL "feistel/pl_reg1_23" BEL "feistel/pl_reg1_22"
+        BEL "feistel/pl_reg1_21" BEL "feistel/pl_reg1_20" BEL
+        "feistel/pl_reg1_19" BEL "feistel/pl_reg1_18" BEL "feistel/pl_reg1_17"
+        BEL "feistel/pl_reg1_16" BEL "feistel/pl_reg1_15" BEL
+        "feistel/pl_reg1_14" BEL "feistel/pl_reg1_13" BEL "feistel/pl_reg1_12"
+        BEL "feistel/pl_reg1_11" BEL "feistel/pl_reg1_10" BEL
+        "feistel/pl_reg1_9" BEL "feistel/pl_reg1_8" BEL "feistel/pl_reg1_7"
+        BEL "feistel/pl_reg1_4" BEL "feistel/pl_reg1_3" BEL
+        "feistel/pl_reg1_2" BEL "feistel/pl_reg1_1" BEL "feistel/pl_reg1_0"
+        BEL "feistel/pl_reg0_127" BEL "feistel/pl_reg0_126" BEL
+        "feistel/pl_reg0_125" BEL "feistel/pl_reg0_124" BEL
+        "feistel/pl_reg0_123" BEL "feistel/pl_reg0_122" BEL
+        "feistel/pl_reg0_121" BEL "feistel/pl_reg0_120" BEL
+        "feistel/pl_reg0_119" BEL "feistel/pl_reg0_118" BEL
+        "feistel/pl_reg0_117" BEL "feistel/pl_reg0_116" BEL
+        "feistel/pl_reg0_115" BEL "feistel/pl_reg0_114" BEL
+        "feistel/pl_reg0_113" BEL "feistel/pl_reg0_112" BEL
+        "feistel/pl_reg0_111" BEL "feistel/pl_reg0_110" BEL
+        "feistel/pl_reg0_109" BEL "feistel/pl_reg0_108" BEL
+        "feistel/pl_reg0_107" BEL "feistel/pl_reg0_106" BEL
+        "feistel/pl_reg0_105" BEL "feistel/pl_reg0_104" BEL
+        "feistel/pl_reg0_103" BEL "feistel/pl_reg0_102" BEL
+        "feistel/pl_reg0_101" BEL "feistel/pl_reg0_100" BEL
+        "feistel/pl_reg0_99" BEL "feistel/pl_reg0_98" BEL "feistel/pl_reg0_97"
+        BEL "feistel/pl_reg0_96" BEL "feistel/pl_reg0_95" BEL
+        "feistel/pl_reg0_94" BEL "feistel/pl_reg0_93" BEL "feistel/pl_reg0_92"
+        BEL "feistel/pl_reg0_91" BEL "feistel/pl_reg0_90" BEL
+        "feistel/pl_reg0_89" BEL "feistel/pl_reg0_88" BEL "feistel/pl_reg0_87"
+        BEL "feistel/pl_reg0_86" BEL "feistel/pl_reg0_85" BEL
+        "feistel/pl_reg0_84" BEL "feistel/pl_reg0_83" BEL "feistel/pl_reg0_82"
+        BEL "feistel/pl_reg0_81" BEL "feistel/pl_reg0_80" BEL
+        "feistel/pl_reg0_79" BEL "feistel/pl_reg0_78" BEL "feistel/pl_reg0_77"
+        BEL "feistel/pl_reg0_76" BEL "feistel/pl_reg0_75" BEL
+        "feistel/pl_reg0_74" BEL "feistel/pl_reg0_73" BEL "feistel/pl_reg0_72"
+        BEL "feistel/pl_reg0_71" BEL "feistel/pl_reg0_70" BEL
+        "feistel/pl_reg0_69" BEL "feistel/pl_reg0_68" BEL "feistel/pl_reg0_67"
+        BEL "feistel/pl_reg0_66" BEL "feistel/pl_reg0_65" BEL
+        "feistel/pl_reg0_64" BEL "feistel/pl_reg0_63" BEL "feistel/pl_reg0_62"
+        BEL "feistel/pl_reg0_61" BEL "feistel/pl_reg0_60" BEL
+        "feistel/pl_reg0_59" BEL "feistel/pl_reg0_58" BEL "feistel/pl_reg0_57"
+        BEL "feistel/pl_reg0_56" BEL "feistel/pl_reg0_55" BEL
+        "feistel/pl_reg0_54" BEL "feistel/pl_reg0_53" BEL "feistel/pl_reg0_52"
+        BEL "feistel/pl_reg0_51" BEL "feistel/pl_reg0_50" BEL
+        "feistel/pl_reg0_49" BEL "feistel/pl_reg0_48" BEL "feistel/pl_reg0_47"
+        BEL "feistel/pl_reg0_46" BEL "feistel/pl_reg0_45" BEL
+        "feistel/pl_reg0_44" BEL "feistel/pl_reg0_43" BEL "feistel/pl_reg0_42"
+        BEL "feistel/pl_reg0_41" BEL "feistel/pl_reg0_40" BEL
+        "feistel/pl_reg0_39" BEL "feistel/pl_reg0_38" BEL "feistel/pl_reg0_37"
+        BEL "feistel/pl_reg0_36" BEL "feistel/pl_reg0_35" BEL
+        "feistel/pl_reg0_34" BEL "feistel/pl_reg0_33" BEL "feistel/pl_reg0_32"
+        BEL "feistel/pl_reg0_29" BEL "feistel/pl_reg0_28" BEL
+        "feistel/pl_reg0_27" BEL "feistel/pl_reg0_26" BEL "feistel/pl_reg0_25"
+        BEL "feistel/pl_reg0_24" BEL "feistel/pl_reg0_23" BEL
+        "feistel/pl_reg0_22" BEL "feistel/pl_reg0_21" BEL "feistel/pl_reg0_20"
+        BEL "feistel/pl_reg0_19" BEL "feistel/pl_reg0_18" BEL
+        "feistel/pl_reg0_17" BEL "feistel/pl_reg0_16" BEL "feistel/pl_reg0_15"
+        BEL "feistel/pl_reg0_14" BEL "feistel/pl_reg0_13" BEL
+        "feistel/pl_reg0_12" BEL "feistel/pl_reg0_11" BEL "feistel/pl_reg0_10"
+        BEL "feistel/pl_reg0_9" BEL "feistel/pl_reg0_8" BEL
+        "feistel/pl_reg0_7" BEL "feistel/pl_reg0_4" BEL "feistel/pl_reg0_3"
+        BEL "feistel/pl_reg0_2" BEL "feistel/pl_reg0_1" BEL
+        "feistel/pl_reg0_0" BEL "feistel/Mshreg_pl_reg3_93" BEL
+        "feistel/pl_reg3_93" BEL "feistel/Mshreg_pl_reg3_95" BEL
+        "feistel/pl_reg3_95" BEL "feistel/Mshreg_pl_reg3_94" BEL
+        "feistel/pl_reg3_94" BEL "feistel/Mshreg_pl_reg3_92" BEL
+        "feistel/pl_reg3_92" BEL "feistel/Mshreg_pl_reg3_91" BEL
+        "feistel/pl_reg3_91" BEL "feistel/Mshreg_pl_reg3_90" BEL
+        "feistel/pl_reg3_90" BEL "feistel/Mshreg_pl_reg3_89" BEL
+        "feistel/pl_reg3_89" BEL "feistel/Mshreg_pl_reg3_88" BEL
+        "feistel/pl_reg3_88" BEL "feistel/Mshreg_pl_reg3_87" BEL
+        "feistel/pl_reg3_87" BEL "feistel/Mshreg_pl_reg3_86" BEL
+        "feistel/pl_reg3_86" BEL "feistel/Mshreg_pl_reg3_85" BEL
+        "feistel/pl_reg3_85" BEL "feistel/Mshreg_pl_reg3_84" BEL
+        "feistel/pl_reg3_84" BEL "feistel/Mshreg_pl_reg3_83" BEL
+        "feistel/pl_reg3_83" BEL "feistel/Mshreg_pl_reg3_82" BEL
+        "feistel/pl_reg3_82" BEL "feistel/Mshreg_pl_reg3_81" BEL
+        "feistel/pl_reg3_81" BEL "feistel/Mshreg_pl_reg3_80" BEL
+        "feistel/pl_reg3_80" BEL "feistel/Mshreg_pl_reg3_79" BEL
+        "feistel/pl_reg3_79" BEL "feistel/Mshreg_pl_reg3_76" BEL
+        "feistel/pl_reg3_76" BEL "feistel/Mshreg_pl_reg3_78" BEL
+        "feistel/pl_reg3_78" BEL "feistel/Mshreg_pl_reg3_77" BEL
+        "feistel/pl_reg3_77" BEL "feistel/Mshreg_pl_reg3_75" BEL
+        "feistel/pl_reg3_75" BEL "feistel/Mshreg_pl_reg3_74" BEL
+        "feistel/pl_reg3_74" BEL "feistel/Mshreg_pl_reg3_73" BEL
+        "feistel/pl_reg3_73" BEL "feistel/Mshreg_pl_reg3_72" BEL
+        "feistel/pl_reg3_72" BEL "feistel/Mshreg_pl_reg3_71" BEL
+        "feistel/pl_reg3_71" BEL "feistel/Mshreg_pl_reg3_70" BEL
+        "feistel/pl_reg3_70" BEL "feistel/Mshreg_pl_reg3_69" BEL
+        "feistel/pl_reg3_69" BEL "feistel/Mshreg_pl_reg3_68" BEL
+        "feistel/pl_reg3_68" BEL "feistel/Mshreg_pl_reg3_67" BEL
+        "feistel/pl_reg3_67" BEL "feistel/Mshreg_pl_reg3_66" BEL
+        "feistel/pl_reg3_66" BEL "feistel/Mshreg_pl_reg3_65" BEL
+        "feistel/pl_reg3_65" BEL "feistel/Mshreg_pl_reg3_64" BEL
+        "feistel/pl_reg3_64" BEL "feistel/Mshreg_pl_reg2_127" BEL
+        "feistel/pl_reg2_127" BEL "feistel/Mshreg_pl_reg2_126" BEL
+        "feistel/pl_reg2_126" BEL "feistel/Mshreg_pl_reg2_123" BEL
+        "feistel/pl_reg2_123" BEL "feistel/Mshreg_pl_reg2_125" BEL
+        "feistel/pl_reg2_125" BEL "feistel/Mshreg_pl_reg2_124" BEL
+        "feistel/pl_reg2_124" BEL "feistel/Mshreg_pl_reg2_122" BEL
+        "feistel/pl_reg2_122" BEL "feistel/Mshreg_pl_reg2_121" BEL
+        "feistel/pl_reg2_121" BEL "feistel/Mshreg_pl_reg2_120" BEL
+        "feistel/pl_reg2_120" BEL "feistel/Mshreg_pl_reg2_119" BEL
+        "feistel/pl_reg2_119" BEL "feistel/Mshreg_pl_reg2_118" BEL
+        "feistel/pl_reg2_118" BEL "feistel/Mshreg_pl_reg2_117" BEL
+        "feistel/pl_reg2_117" BEL "feistel/Mshreg_pl_reg2_116" BEL
+        "feistel/pl_reg2_116" BEL "feistel/Mshreg_pl_reg2_115" BEL
+        "feistel/pl_reg2_115" BEL "feistel/Mshreg_pl_reg2_114" BEL
+        "feistel/pl_reg2_114" BEL "feistel/Mshreg_pl_reg2_113" BEL
+        "feistel/pl_reg2_113" BEL "feistel/Mshreg_pl_reg2_112" BEL
+        "feistel/pl_reg2_112" BEL "feistel/Mshreg_pl_reg2_111" BEL
+        "feistel/pl_reg2_111" BEL "feistel/Mshreg_pl_reg2_110" BEL
+        "feistel/pl_reg2_110" BEL "feistel/Mshreg_pl_reg2_109" BEL
+        "feistel/pl_reg2_109" BEL "feistel/Mshreg_pl_reg2_106" BEL
+        "feistel/pl_reg2_106" BEL "feistel/Mshreg_pl_reg2_108" BEL
+        "feistel/pl_reg2_108" BEL "feistel/Mshreg_pl_reg2_107" BEL
+        "feistel/pl_reg2_107" BEL "feistel/Mshreg_pl_reg2_105" BEL
+        "feistel/pl_reg2_105" BEL "feistel/Mshreg_pl_reg2_104" BEL
+        "feistel/pl_reg2_104" BEL "feistel/Mshreg_pl_reg2_103" BEL
+        "feistel/pl_reg2_103" BEL "feistel/Mshreg_pl_reg2_102" BEL
+        "feistel/pl_reg2_102" BEL "feistel/Mshreg_pl_reg2_101" BEL
+        "feistel/pl_reg2_101" BEL "feistel/Mshreg_pl_reg2_100" BEL
+        "feistel/pl_reg2_100" BEL "feistel/Mshreg_pl_reg2_99" BEL
+        "feistel/pl_reg2_99" BEL "feistel/Mshreg_pl_reg2_98" BEL
+        "feistel/pl_reg2_98" BEL "feistel/Mshreg_pl_reg2_97" BEL
+        "feistel/pl_reg2_97" BEL "feistel/Mshreg_pl_reg2_96" BEL
+        "feistel/pl_reg2_96" BEL "feistel/Mshreg_pl_reg1_31" BEL
+        "feistel/pl_reg1_31" BEL "feistel/Mshreg_pl_reg1_30" BEL
+        "feistel/pl_reg1_30" BEL "feistel/Mshreg_pl_reg1_6" BEL
+        "feistel/pl_reg1_6" BEL "feistel/Mshreg_pl_reg1_5" BEL
+        "feistel/pl_reg1_5";
+TS_clk = PERIOD TIMEGRP "clk" 6 ns HIGH 50%;
+SCHEMATIC END;
+

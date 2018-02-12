@@ -1,0 +1,7 @@
+vhdl work "mx_add.vhd"
+vhdl work "sums.vhd"
+vhdl work "round_counter.vhd"
+vhdl work "mx.vhd"
+vhdl work "key_module.vhd"
+vhdl work "xxtea_encrypt.vhd"
+vhdl work "xxtea_encrypt_tb.vhd"

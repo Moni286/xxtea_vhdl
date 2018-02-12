@@ -109,22 +109,23 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-
-      wait for clk_period*10;
+		en <= '0';
 		
-		en <= '1';
-	
-      state <= x"31323334353637383837363534333231";
+		state <= x"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 		
 		sum_0 <= x"9e3779b9";
 		sum_1 <= x"9e3779b9";
 		sum_2 <= x"9e3779b9";
 		sum_3 <= x"9e3779b9";
 		
-		key_0 <= x"38373635";
-		key_1 <= x"34333231";
-		key_2 <= x"31323334";
-		key_3 <= x"35363738";
+		key_0 <= x"aaaaaaaa";
+		key_1 <= x"aaaaaaaa";
+		key_2 <= x"aaaaaaaa";
+		key_3 <= x"aaaaaaaa";
+		
+      wait for clk_period*10;
+		
+		en <= '1';
 
       wait;
    end process;

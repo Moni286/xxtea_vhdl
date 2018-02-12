@@ -32,31 +32,37 @@ use IEEE.NUMERIC_STD.ALL;
 entity round_counter is
     Port ( clk : in  STD_LOGIC;
 			  en : in STD_LOGIC;
-           round : out  STD_LOGIC_VECTOR (4 downto 0));
+           round : out  STD_LOGIC_VECTOR (4 downto 0);
+			  start : out STD_LOGIC);
 end round_counter;
 
 architecture Behavioral of round_counter is
 
-signal counter : integer := 0;
+signal counter : STD_LOGIC_VECTOR(1 downto 0) := "00";
 signal round_s : STD_LOGIC_VECTOR(4 downto 0) := "00000";
-constant MAX : integer := 4;
+signal start_s : STD_LOGIC := '1';
 
 begin
 
 	round <= round_s;
+	start <= start_s;
 
 	PROCESS (clk)
 	BEGIN 
 	
 		if rising_edge(clk) then
 			if en = '1' then
-				counter <= (counter + 1) mod MAX;
-				if counter = 3 then
+				if counter = "11" then
 					round_s <= STD_LOGIC_VECTOR(unsigned(round_s) + 1);
+					counter <= "00";
+					start_s <= '0';
+				else
+					counter <= STD_LOGIC_VECTOR(unsigned(counter) + 1);
 				end if;
 			else
 				round_s <= "00000";
-				counter <= 0;
+				counter <= "00";
+				start_s <= '1';
 			end if;
 		end if;
 	
