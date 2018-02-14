@@ -68,7 +68,7 @@ Automatic Register Balancing       : No
 ---- Target Options
 LUT Combining                      : Auto
 Reduce Control Sets                : Auto
-Add IO Buffers                     : YES
+Add IO Buffers                     : NO
 Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 16
 Register Duplication               : YES
@@ -124,24 +124,20 @@ Synthesizing Unit <sums>.
     Found 32-bit register for signal <sum_1>.
     Found 32-bit register for signal <sum_2>.
     Found 32-bit register for signal <sum_3>.
-    Found 2-bit register for signal <counter>.
     Found 32-bit register for signal <sum_0>.
-    Found 32-bit adder for signal <sum_3s[31]_PWR_4_o_add_1_OUT> created at line 73.
-    Found 2-bit adder for signal <counter[1]_GND_4_o_add_2_OUT> created at line 1241.
+    Found 32-bit adder for signal <sum_3s[31]_PWR_4_o_add_0_OUT> created at line 71.
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred 130 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 128 D-type flip-flop(s).
 Unit <sums> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
- 2-bit adder                                           : 1
+# Adders/Subtractors                                   : 1
  32-bit adder                                          : 1
-# Registers                                            : 5
- 2-bit register                                        : 1
+# Registers                                            : 4
  32-bit register                                       : 4
 
 =========================================================================
@@ -151,18 +147,12 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <sums>.
-The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
-Unit <sums> synthesized (advanced).
-
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 1
  32-bit adder                                          : 1
-# Counters                                             : 1
- 2-bit up counter                                      : 1
 # Registers                                            : 128
  Flip-Flops                                            : 128
 
@@ -176,7 +166,7 @@ Optimizing unit <sums> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block sums, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block sums, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -184,8 +174,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 130
- Flip-Flops                                            : 130
+# Registers                                            : 128
+ Flip-Flops                                            : 128
 
 =========================================================================
 
@@ -208,23 +198,16 @@ Top Level Output File Name         : sums.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 132
+# BELS                             : 98
 #      GND                         : 1
 #      INV                         : 21
 #      LUT1                        : 12
-#      LUT2                        : 2
-#      LUT3                        : 32
 #      MUXCY                       : 31
 #      VCC                         : 1
 #      XORCY                       : 32
-# FlipFlops/Latches                : 130
-#      FDR                         : 98
-#      FDRE                        : 32
-# Clock Buffers                    : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 129
-#      IBUF                        : 1
-#      OBUF                        : 128
+# FlipFlops/Latches                : 128
+#      FDR                         : 108
+#      FDS                         : 20
 
 Device utilization summary:
 ---------------------------
@@ -233,23 +216,22 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             130  out of  18224     0%  
- Number of Slice LUTs:                   67  out of   9112     0%  
-    Number used as Logic:                67  out of   9112     0%  
+ Number of Slice Registers:             128  out of  18224     0%  
+ Number of Slice LUTs:                   33  out of   9112     0%  
+    Number used as Logic:                33  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    163
-   Number with an unused Flip Flop:      33  out of    163    20%  
-   Number with an unused LUT:            96  out of    163    58%  
-   Number of fully used LUT-FF pairs:    34  out of    163    20%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:    129
+   Number with an unused Flip Flop:       1  out of    129     0%  
+   Number with an unused LUT:            96  out of    129    74%  
+   Number of fully used LUT-FF pairs:    32  out of    129    24%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                         130
- Number of bonded IOBs:                 130  out of    232    56%  
+ Number of bonded IOBs:                   0  out of    232     0%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -272,8 +254,9 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 130   |
+clk                                | NONE(sum_2s_0)         | 128   |
 -----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -283,9 +266,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 3.634ns (Maximum Frequency: 275.217MHz)
-   Minimum input arrival time before clock: 5.023ns
-   Maximum output required time after clock: 4.202ns
+   Minimum period: 2.654ns (Maximum Frequency: 376.861MHz)
+   Minimum input arrival time before clock: 3.008ns
+   Maximum output required time after clock: 0.525ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -294,10 +277,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.634ns (frequency: 275.217MHz)
-  Total number of paths / destination ports: 724 / 162
+  Clock period: 2.654ns (frequency: 376.861MHz)
+  Total number of paths / destination ports: 624 / 128
 -------------------------------------------------------------------------
-Delay:               3.634ns (Levels of Logic = 34)
+Delay:               2.654ns (Levels of Logic = 33)
   Source:            sum_3s_0 (FF)
   Destination:       sum_0s_31 (FF)
   Source Clock:      clk rising
@@ -307,51 +290,50 @@ Delay:               3.634ns (Levels of Logic = 34)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              2   0.525   0.725  sum_3s_0 (sum_3s_0)
-     INV:I->O              1   0.255   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_lut<0>_INV_0 (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<0> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<1> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<2> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<3> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<4> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<5> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<6> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<7> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<8> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<9> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<10> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<11> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<12> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<13> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<14> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<15> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<16> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<17> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<17>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<18> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<18>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<19> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<19>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<20> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<20>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<21> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<21>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<22> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<22>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<23> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<23>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<24> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<24>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<25> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<25>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<26> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<26>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<27> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<27>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<28> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<28>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<29> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<29>)
-     MUXCY:CI->O           0   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<30> (Madd_sum_3s[31]_PWR_4_o_add_1_OUT_cy<30>)
-     XORCY:CI->O           1   0.206   0.682  Madd_sum_3s[31]_PWR_4_o_add_1_OUT_xor<31> (sum_3s[31]_PWR_4_o_add_1_OUT<31>)
-     LUT3:I2->O            1   0.254   0.000  sum_0s_31_dpot (sum_0s_31_dpot)
-     FDRE:D                    0.074          sum_0s_31
+     FDR:C->Q              1   0.525   0.681  sum_3s_0 (sum_3s_0)
+     INV:I->O              1   0.255   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_lut<0>_INV_0 (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<0> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<1> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<2> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<3> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<4> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<5> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<6> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<7> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<8> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<9> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<10> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<11> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<12> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<13> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<14> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<15> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<16> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<17> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<18> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<19> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<20> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<21> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<22> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<22>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<23> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<23>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<24> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<24>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<25> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<25>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<26> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<26>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<27> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<27>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<28> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<28>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<29> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<29>)
+     MUXCY:CI->O           0   0.023   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<30> (Madd_sum_3s[31]_PWR_4_o_add_0_OUT_cy<30>)
+     XORCY:CI->O           1   0.206   0.000  Madd_sum_3s[31]_PWR_4_o_add_0_OUT_xor<31> (sum_3s[31]_PWR_4_o_add_0_OUT<31>)
+     FDS:D                     0.074          sum_0s_31
     ----------------------------------------
-    Total                      3.634ns (2.227ns logic, 1.407ns route)
-                                       (61.3% logic, 38.7% route)
+    Total                      2.654ns (1.973ns logic, 0.681ns route)
+                                       (74.3% logic, 25.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 130 / 130
+  Total number of paths / destination ports: 128 / 128
 -------------------------------------------------------------------------
-Offset:              5.023ns (Levels of Logic = 2)
+Offset:              3.008ns (Levels of Logic = 1)
   Source:            en (PAD)
   Destination:       sum_2s_0 (FF)
   Destination Clock: clk rising
@@ -360,18 +342,17 @@ Offset:              5.023ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  en_IBUF (en_IBUF)
-     INV:I->O            130   0.255   2.300  en_inv1_INV_0 (en_inv)
+     INV:I->O            128   0.255   2.294  en_inv1_INV_0 (en_inv)
      FDR:R                     0.459          sum_2s_0
     ----------------------------------------
-    Total                      5.023ns (2.042ns logic, 2.981ns route)
-                                       (40.6% logic, 59.4% route)
+    Total                      3.008ns (0.714ns logic, 2.294ns route)
+                                       (23.7% logic, 76.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 128 / 128
 -------------------------------------------------------------------------
-Offset:              4.202ns (Levels of Logic = 1)
+Offset:              0.525ns (Levels of Logic = 0)
   Source:            sum_0s_31 (FF)
   Destination:       sum_0<31> (PAD)
   Source Clock:      clk rising
@@ -380,11 +361,10 @@ Offset:              4.202ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             3   0.525   0.765  sum_0s_31 (sum_0s_31)
-     OBUF:I->O                 2.912          sum_0_31_OBUF (sum_0<31>)
+     FDS:C->Q              1   0.525   0.000  sum_0s_31 (sum_0s_31)
     ----------------------------------------
-    Total                      4.202ns (3.437ns logic, 0.765ns route)
-                                       (81.8% logic, 18.2% route)
+    Total                      0.525ns (0.525ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
 
 =========================================================================
 
@@ -396,20 +376,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.634|         |         |         |
+clk            |    2.654|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.84 secs
+Total CPU time to Xst completion: 4.91 secs
  
 --> 
 
-Total memory usage is 261596 kilobytes
+Total memory usage is 259828 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

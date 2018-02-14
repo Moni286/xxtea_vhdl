@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -68,7 +68,7 @@ Automatic Register Balancing       : No
 ---- Target Options
 LUT Combining                      : Auto
 Reduce Control Sets                : Auto
-Add IO Buffers                     : YES
+Add IO Buffers                     : NO
 Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 16
 Register Duplication               : YES
@@ -121,9 +121,10 @@ Elaborating entity <mx_add> (architecture <Behavioral>) from library <work>.
 
 Synthesizing Unit <mx_add>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\XXTEA\XXTEA\mx_add.vhd".
-    Found 32-bit adder for signal <x> created at line 62.
-    Found 32-bit adder for signal <a> created at line 63.
-    Found 32-bit adder for signal <sigma> created at line 67.
+    Found 32-bit adder for signal <x> created at line 68.
+    Found 32-bit adder for signal <a> created at line 69.
+    Found 32-bit adder for signal <addend[31]_after_mx[31]_add_7_OUT> created at line 74.
+    Found 32-bit subtractor for signal <GND_4_o_GND_4_o_sub_9_OUT<31:0>> created at line 75.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 Unit <mx_add> synthesized.
@@ -133,7 +134,8 @@ HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 3
- 32-bit adder                                          : 3
+ 32-bit adder                                          : 2
+ 32-bit addsub                                         : 1
 # Xors                                                 : 5
  32-bit xor2                                           : 5
 
@@ -149,7 +151,8 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 3
- 32-bit adder                                          : 3
+ 32-bit adder                                          : 2
+ 32-bit addsub                                         : 1
 # Xors                                                 : 5
  32-bit xor2                                           : 5
 
@@ -195,13 +198,10 @@ Primitive and Black Box Usage:
 # BELS                             : 342
 #      GND                         : 1
 #      LUT2                        : 61
-#      LUT3                        : 36
-#      LUT4                        : 55
+#      LUT3                        : 4
+#      LUT4                        : 87
 #      MUXCY                       : 93
 #      XORCY                       : 96
-# IO Buffers                       : 192
-#      IBUF                        : 160
-#      OBUF                        : 32
 
 Device utilization summary:
 ---------------------------
@@ -221,8 +221,8 @@ Slice Logic Distribution:
    Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                         192
- Number of bonded IOBs:                 192  out of    232    82%  
+ Number of IOs:                         193
+ Number of bonded IOBs:                   0  out of    232     0%  
 
 Specific Feature Utilization:
 
@@ -257,7 +257,7 @@ Speed Grade: -2
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 8.744ns
+   Maximum combinational path delay: 3.192ns
 
 Timing Details:
 ---------------
@@ -265,18 +265,17 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 66746 / 32
+  Total number of paths / destination ports: 67306 / 32
 -------------------------------------------------------------------------
-Delay:               8.744ns (Levels of Logic = 37)
-  Source:            y<0> (PAD)
+Delay:               3.192ns (Levels of Logic = 35)
+  Source:            sum<0> (PAD)
   Destination:       sigma<31> (PAD)
 
-  Data Path: y<0> to sigma<31>
+  Data Path: sum<0> to sigma<31>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.328   1.032  y_0_IBUF (y_0_IBUF)
-     LUT4:I1->O            1   0.235   0.000  Madd_a_lut<0> (Madd_a_lut<0>)
+     LUT4:I0->O            1   0.254   0.000  Madd_a_lut<0> (Madd_a_lut<0>)
      MUXCY:S->O            1   0.215   0.000  Madd_a_cy<0> (Madd_a_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a_cy<1> (Madd_a_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a_cy<2> (Madd_a_cy<2>)
@@ -307,14 +306,13 @@ Delay:               8.744ns (Levels of Logic = 37)
      MUXCY:CI->O           1   0.023   0.000  Madd_a_cy<27> (Madd_a_cy<27>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a_cy<28> (Madd_a_cy<28>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a_cy<29> (Madd_a_cy<29>)
-     XORCY:CI->O           1   0.206   0.790  Madd_a_xor<30> (a<30>)
-     LUT3:I1->O            1   0.250   0.000  Madd_sigma_lut<30> (Madd_sigma_lut<30>)
-     MUXCY:S->O            0   0.215   0.000  Madd_sigma_cy<30> (Madd_sigma_cy<30>)
-     XORCY:CI->O           1   0.206   0.681  Madd_sigma_xor<31> (sigma_31_OBUF)
-     OBUF:I->O                 2.912          sigma_31_OBUF (sigma<31>)
+     XORCY:CI->O           1   0.206   0.910  Madd_a_xor<30> (a<30>)
+     LUT4:I1->O            1   0.235   0.000  Maddsub_sigma_lut<30> (Maddsub_sigma_lut<30>)
+     MUXCY:S->O            0   0.215   0.000  Maddsub_sigma_cy<30> (Maddsub_sigma_cy<30>)
+     XORCY:CI->O           0   0.206   0.000  Maddsub_sigma_xor<31> (sigma<31>)
     ----------------------------------------
-    Total                      8.744ns (6.241ns logic, 2.503ns route)
-                                       (71.4% logic, 28.6% route)
+    Total                      3.192ns (2.282ns logic, 0.910ns route)
+                                       (71.5% logic, 28.5% route)
 
 =========================================================================
 
@@ -324,12 +322,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.51 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.80 secs
  
 --> 
 
-Total memory usage is 261980 kilobytes
+Total memory usage is 260660 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

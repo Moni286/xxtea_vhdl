@@ -11,3 +11,4 @@ xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.syr" 
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.syr" 
 xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.syr" 
+xst -intstyle ise -ifn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.xst" -ofn "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.syr" 

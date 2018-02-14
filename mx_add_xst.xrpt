@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Sun Feb 04 10:22:43 2018">
+  <application stringID="Xst" timeStamp="Tue Feb 13 00:23:33 2018">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -88,7 +88,7 @@
       <item DEFAULT="No" label="-async_to_sync" stringID="XST_ASYNCTOSYNC" value="NO"/>
       <item DEFAULT="2" stringID="XST_SHREGMINSIZE" value="2"/>
       <item DEFAULT="Auto" label="-use_dsp48" stringID="XST_USEDSP48" value="Auto"/>
-      <item DEFAULT="Yes" label="-iobuf" stringID="XST_IOBUF" value="YES"/>
+      <item DEFAULT="Yes" label="-iobuf" stringID="XST_IOBUF" value="NO"/>
       <item DEFAULT="100000" label="-max_fanout" stringID="XST_MAXFANOUT" value="100000"/>
       <item DEFAULT="16" label="-bufg" stringID="XST_BUFG" value="16"/>
       <item DEFAULT="Yes" label="-register_duplication" stringID="XST_REGISTERDUPLICATION" value="YES"/>
@@ -103,13 +103,13 @@
     </section>
     <section stringID="XST_HDL_SYNTHESIS_REPORT">
       <item dataType="int" stringID="XST_ADDERSSUBTRACTORS" value="3">
-        <item dataType="int" stringID="XST_32BIT_ADDER" value="3"/>
+        <item dataType="int" stringID="XST_32BIT_ADDER" value="2"/>
       </item>
       <item dataType="int" stringID="XST_XORS" value="5"></item>
     </section>
     <section stringID="XST_ADVANCED_HDL_SYNTHESIS_REPORT">
       <item dataType="int" stringID="XST_ADDERSSUBTRACTORS" value="3">
-        <item dataType="int" stringID="XST_32BIT_ADDER" value="3"/>
+        <item dataType="int" stringID="XST_32BIT_ADDER" value="2"/>
       </item>
       <item dataType="int" stringID="XST_XORS" value="5"></item>
     </section>
@@ -127,14 +127,10 @@
         <item dataType="int" stringID="XST_BELS" value="342">
           <item dataType="int" stringID="XST_GND" value="1"/>
           <item dataType="int" stringID="XST_LUT2" value="61"/>
-          <item dataType="int" stringID="XST_LUT3" value="36"/>
-          <item dataType="int" stringID="XST_LUT4" value="55"/>
+          <item dataType="int" stringID="XST_LUT3" value="4"/>
+          <item dataType="int" stringID="XST_LUT4" value="87"/>
           <item dataType="int" stringID="XST_MUXCY" value="93"/>
           <item dataType="int" stringID="XST_XORCY" value="96"/>
-        </item>
-        <item dataType="int" stringID="XST_IO_BUFFERS" value="192">
-          <item dataType="int" stringID="XST_IBUF" value="160"/>
-          <item dataType="int" stringID="XST_OBUF" value="32"/>
         </item>
       </section>
     </section>
@@ -147,8 +143,8 @@
       <item AVAILABLE="152" dataType="int" label="Number with an unused LUT" stringID="XST_NUMBER_WITH_AN_UNUSED_LUT" value="0"/>
       <item AVAILABLE="152" dataType="int" label="Number of fully used LUT-FF pairs" stringID="XST_NUMBER_OF_FULLY_USED_LUTFF_PAIRS" value="0"/>
       <item dataType="int" label="Number of unique control sets" stringID="XST_NUMBER_OF_UNIQUE_CONTROL_SETS" value="0"/>
-      <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="192"/>
-      <item AVAILABLE="232" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="192"/>
+      <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="193"/>
+      <item AVAILABLE="232" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="0"/>
     </section>
     <section stringID="XST_PARTITION_RESOURCE_SUMMARY">
       <section stringID="XST_NO_PARTITIONS_WERE_FOUND_IN_THIS_DESIGN"/>

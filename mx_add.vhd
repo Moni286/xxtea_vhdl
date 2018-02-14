@@ -30,7 +30,8 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity mx_add is
-    Port ( z : in  STD_LOGIC_VECTOR (31 downto 0);
+    Port ( dec : in STD_LOGIC;
+			  z : in  STD_LOGIC_VECTOR (31 downto 0);
            y : in  STD_LOGIC_VECTOR (31 downto 0);
            addend : in  STD_LOGIC_VECTOR (31 downto 0);
            sum : in  STD_LOGIC_VECTOR (31 downto 0);
@@ -50,6 +51,11 @@ signal x : STD_LOGIC_VECTOR(31 downto 0);
 signal a : STD_LOGIC_VECTOR(31 downto 0);
 
 signal after_mx : STD_LOGIC_VECTOR(31 downto 0);
+signal after_add : STD_LOGIC_VECTOR(32 downto 0);
+
+--signal twos_comp : STD_LOGIC_VECTOR(32 downto 0);
+
+--signal addend2 : STD_LOGIC_VECTOR(32 downto 0);
 
 begin
 
@@ -64,8 +70,10 @@ begin
 
 	after_mx <= x XOR a;
 	
-	sigma <= STD_LOGIC_VECTOR(unsigned(addend) + unsigned(after_mx));
-
+	with dec select sigma <=
+		STD_LOGIC_VECTOR(unsigned(addend) + unsigned(after_mx)) when '0',
+		STD_LOGIC_VECTOR(unsigned(addend) - unsigned(after_mx)) when others;
+	
 end Behavioral;
 
 

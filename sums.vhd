@@ -32,6 +32,8 @@ use IEEE.NUMERIC_STD.ALL;
 entity sums is
     Port ( clk: in STD_LOGIC;
 			  en : in  STD_LOGIC;
+			  start : in STD_LOGIC;
+			  dec : in STD_LOGIC;
            sum_0 : out  STD_LOGIC_VECTOR (31 downto 0);
            sum_1 : out  STD_LOGIC_VECTOR (31 downto 0);
            sum_2 : out  STD_LOGIC_VECTOR (31 downto 0);
@@ -42,6 +44,7 @@ end sums;
 architecture Behavioral of sums is
 
 constant DELTA : STD_LOGIC_VECTOR(31 downto 0) := x"9e3779b9";
+constant DELTA19 : STD_LOGIC_VECTOR(31 downto 0) := x"9e3779b9"; -- CHANGE THIS NUMBER
 
 signal sum_0s : STD_LOGIC_VECTOR(31 downto 0);
 signal sum_1s : STD_LOGIC_VECTOR(31 downto 0);
