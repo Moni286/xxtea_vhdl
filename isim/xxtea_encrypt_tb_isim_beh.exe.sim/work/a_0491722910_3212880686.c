@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/round_counter.vhd";
+static const char *ng0 = "C:/Users/Lucas Futch/Documents/xxtea_vhdl/round_counter.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -135,7 +135,7 @@ LAB2:    xsi_set_current_line(54, ng0);
         goto LAB5;
 
 LAB7:    xsi_set_current_line(63, ng0);
-    t1 = (t0 + 6742);
+    t1 = (t0 + 6502);
     t4 = (t0 + 4208);
     t7 = (t4 + 56U);
     t8 = *((char **)t7);
@@ -144,7 +144,7 @@ LAB7:    xsi_set_current_line(63, ng0);
     memcpy(t12, t1, 5U);
     xsi_driver_first_trans_fast(t4);
     xsi_set_current_line(64, ng0);
-    t1 = (t0 + 6747);
+    t1 = (t0 + 6507);
     t4 = (t0 + 4272);
     t7 = (t4 + 56U);
     t8 = *((char **)t7);
@@ -166,7 +166,7 @@ LAB6:    goto LAB3;
 LAB5:    xsi_set_current_line(55, ng0);
     t3 = (t0 + 1672U);
     t7 = *((char **)t3);
-    t3 = (t0 + 6738);
+    t3 = (t0 + 6498);
     t9 = 1;
     if (2U == 2U)
         goto LAB11;
@@ -179,7 +179,7 @@ LAB13:    if (t9 != 0)
 LAB10:    xsi_set_current_line(60, ng0);
     t1 = (t0 + 1672U);
     t3 = *((char **)t1);
-    t1 = (t0 + 6688U);
+    t1 = (t0 + 6448U);
     t4 = ieee_p_1242562249_sub_1919365254_1035706684(IEEE_P_1242562249, t13, t3, t1, 1);
     t7 = (t0 + 4272);
     t8 = (t7 + 56U);
@@ -194,7 +194,7 @@ LAB9:    goto LAB6;
 LAB8:    xsi_set_current_line(56, ng0);
     t14 = (t0 + 1832U);
     t15 = *((char **)t14);
-    t14 = (t0 + 6704U);
+    t14 = (t0 + 6464U);
     t16 = ieee_p_1242562249_sub_1919365254_1035706684(IEEE_P_1242562249, t13, t15, t14, 1);
     t17 = (t0 + 4208);
     t18 = (t17 + 56U);
@@ -204,7 +204,7 @@ LAB8:    xsi_set_current_line(56, ng0);
     memcpy(t21, t16, 5U);
     xsi_driver_first_trans_fast(t17);
     xsi_set_current_line(57, ng0);
-    t1 = (t0 + 6740);
+    t1 = (t0 + 6500);
     t4 = (t0 + 4272);
     t7 = (t4 + 56U);
     t8 = *((char **)t7);

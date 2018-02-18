@@ -46,6 +46,7 @@ ARCHITECTURE behavior OF xxtea_encrypt_tb IS
          w : IN  std_logic;
          key : IN  std_logic_vector(127 downto 0);
          pt : IN  std_logic_vector(127 downto 0);
+			dec : IN std_logic;
          ct : OUT  std_logic_vector(127 downto 0);
 			round: OUT STD_LOGIC_VECTOR(4 downto 0);
 			sum : OUT STD_LOGIC_VECTOR(31 downto 0)
@@ -59,6 +60,7 @@ ARCHITECTURE behavior OF xxtea_encrypt_tb IS
    signal w : std_logic := '0';
    signal key : std_logic_vector(127 downto 0) := (others => '0');
    signal pt : std_logic_vector(127 downto 0) := (others => '0');
+	signal dec : std_logic := '0';
 
  	--Outputs
    signal ct : std_logic_vector(127 downto 0);
@@ -78,6 +80,7 @@ BEGIN
           key => key,
           pt => pt,
           ct => ct,
+			 dec => dec,
 			 round => round,
 			 sum => sum
         );
@@ -97,6 +100,7 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+		dec <= '0';
 		en <= '0';
 		w <= '0';
 		

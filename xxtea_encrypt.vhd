@@ -35,6 +35,7 @@ entity xxtea_encrypt is
            w : in  STD_LOGIC;
            key : in  STD_LOGIC_VECTOR (127 downto 0);
            pt : in  STD_LOGIC_VECTOR (127 downto 0);
+			  dec : in STD_LOGIC;
            ct : out  STD_LOGIC_VECTOR (127 downto 0);
 			  round: out STD_LOGIC_VECTOR(4 downto 0);
 			  sum : out STD_LOGIC_VECTOR(31 downto 0)
@@ -46,6 +47,8 @@ architecture Behavioral of xxtea_encrypt is
 COMPONENT sums is
     Port ( clk: in STD_LOGIC;
 			  en : in  STD_LOGIC;
+			  start : in STD_LOGIC;
+			  dec : in STD_LOGIC;
            sum_0 : out  STD_LOGIC_VECTOR (31 downto 0);
            sum_1 : out  STD_LOGIC_VECTOR (31 downto 0);
            sum_2 : out  STD_LOGIC_VECTOR (31 downto 0);
@@ -79,6 +82,7 @@ COMPONENT feistel_net is
 				key_1 : in STD_LOGIC_VECTOR(31 downto 0);
 				key_2 : in STD_LOGIC_VECTOR(31 downto 0);
 				key_3 : in STD_LOGIC_VECTOR(31 downto 0);
+				dec : in STD_LOGIC;
 				next_state : out STD_LOGIC_VECTOR(127 downto 0)
 			);
 END COMPONENT feistel_net;
@@ -109,10 +113,10 @@ signal start : STD_LOGIC;
 
 begin
 
-	sums_comp : sums PORT MAP(clk, en, sum_0, sum_1, sum_2, sum_3);
+	sums_comp : sums PORT MAP(clk, en, start, dec, sum_0, sum_1, sum_2, sum_3);
 	key_mod	 : key_module PORT MAP(clk, w, key, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3);
 	
-	feistel 	 : feistel_net PORT MAP(clk, en, feistel_input, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3, next_state);
+	feistel 	 : feistel_net PORT MAP(clk, en, feistel_input, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3, dec, next_state);
 	
 	round_count : round_counter PORT MAP(clk, en, round_s, start);
 	

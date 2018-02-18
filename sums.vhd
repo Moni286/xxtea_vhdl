@@ -44,7 +44,8 @@ end sums;
 architecture Behavioral of sums is
 
 constant DELTA : STD_LOGIC_VECTOR(31 downto 0) := x"9e3779b9";
-constant DELTA19 : STD_LOGIC_VECTOR(31 downto 0) := x"9e3779b9"; -- CHANGE THIS NUMBER
+constant DELTA19 : STD_LOGIC_VECTOR(31 downto 0) := x"be1e08bb";
+
 
 signal sum_0s : STD_LOGIC_VECTOR(31 downto 0);
 signal sum_1s : STD_LOGIC_VECTOR(31 downto 0);
@@ -53,7 +54,13 @@ signal sum_3s : STD_LOGIC_VECTOR(31 downto 0);
 
 signal counter : STD_LOGIC_VECTOR(2 downto 0);
 
+signal curr_delta : STD_LOGIC_VECTOR(31 downto 0);
+
 begin
+
+	with dec select curr_delta <=
+		DELTA when '0',
+		DELTA19 when others;
 	
 	PROCESS(clk)
 	
@@ -61,7 +68,7 @@ begin
 		if rising_edge(clk) then
 		
 			if (en = '0') then
-				sum_0s <= x"9e3779b9";
+				sum_0s <= curr_delta;
 				sum_1s <= x"00000000";
 				sum_2s <= x"00000000";
 				sum_3s <= x"00000000";
@@ -71,6 +78,9 @@ begin
 				sum_1s <= sum_0s;
 				sum_2s <= sum_1s;
 				sum_3s <= sum_2s;
+				--with dec select sum_0s <=
+				--	STD_LOGIC_VECTOR(unsigned(sum_3s) + unsigned(DELTA)) when '0',
+				--	STD_LOGIC_VECTOR(unsigned(sum_3s) - unsigned(DELTA)) when others;
 				sum_0s <= STD_LOGIC_VECTOR(unsigned(sum_3s) + unsigned(DELTA));
 			
 			end if;

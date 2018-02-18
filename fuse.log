@@ -1,20 +1,20 @@
-Running: D:\Programs\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt_tb_isim_beh.exe -prj C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt_tb_beh.prj work.xxtea_encrypt_tb 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt_tb_isim_beh.exe -prj C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt_tb_beh.prj work.xxtea_encrypt_tb 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 8
-Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/mx_add.vhd" into library work
-Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/sums.vhd" into library work
-Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/round_counter.vhd" into library work
-Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/mx.vhd" into library work
-Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_module.vhd" into library work
-Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt.vhd" into library work
-Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt_tb.vhd" into library work
+Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/mx_add.vhd" into library work
+Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/sums.vhd" into library work
+Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/round_counter.vhd" into library work
+Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/mx.vhd" into library work
+Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" into library work
+Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt.vhd" into library work
+Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt_tb.vhd" into library work
 Starting static elaboration
-WARNING:HDLCompiler:794 - "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_module.vhd" Line 90: Statement might not cover all choices ; 'others' clause recommended
-WARNING:HDLCompiler:794 - "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_module.vhd" Line 96: Statement might not cover all choices ; 'others' clause recommended
-WARNING:HDLCompiler:794 - "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_module.vhd" Line 102: Statement might not cover all choices ; 'others' clause recommended
-WARNING:HDLCompiler:794 - "C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/key_module.vhd" Line 108: Statement might not cover all choices ; 'others' clause recommended
+WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 90: Statement might not cover all choices ; 'others' clause recommended
+WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 96: Statement might not cover all choices ; 'others' clause recommended
+WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 102: Statement might not cover all choices ; 'others' clause recommended
+WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 108: Statement might not cover all choices ; 'others' clause recommended
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
@@ -27,8 +27,7 @@ Compiling architecture behavioral of entity round_counter [round_counter_default
 Compiling architecture behavioral of entity xxtea_encrypt [xxtea_encrypt_default]
 Compiling architecture behavior of entity xxtea_encrypt_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 16 VHDL Units
-Built simulation executable C:/Users/HP/Desktop/University/Academics/Capstone/XXTEA/XXTEA/xxtea_encrypt_tb_isim_beh.exe
-Fuse Memory Usage: 37792 KB
-Fuse CPU Usage: 561 ms
+Built simulation executable C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt_tb_isim_beh.exe
+Fuse Memory Usage: 35668 KB
+Fuse CPU Usage: 640 ms

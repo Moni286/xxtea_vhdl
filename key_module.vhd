@@ -111,8 +111,8 @@ begin
 		key_in(95 downto 64) when "01",
 		key_in(127 downto 96) when "00";
 	
-	-- key_sched : key_scheduler PORT MAP(sum_0, sum_1, sum_2, sum_3, index0, index1, index2, index3);
-	-- key_stor : key_RAM PORT MAP(w, clk, key_in, index0, index1, index2, index3, key_0, key_1, key_2, key_3);
+	--key_sched : key_scheduler PORT MAP(sum_0, sum_1, sum_2, sum_3, index0, index1, index2, index3);
+	--key_stor : key_RAM PORT MAP(w, clk, key_in, index0, index1, index2, index3, key_0, key_1, key_2, key_3);
 
 end Behavioral;
 
