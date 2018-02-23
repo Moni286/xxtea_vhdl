@@ -2,9 +2,28 @@ Command line:
    xxtea_encrypt_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  53885
+     -socket  63203
 
-Sat Feb 17 18:30:45 2018
+Fri Feb 23 10:52:00 2018
 
 
- Elaboration Time: 0.046875 sec
+ Elaboration Time: 0.09375 sec
+
+ Current Memory Usage: 693.06 Meg
+
+ Total Signals          : 163
+ Total Nets             : 3302
+ Total Signal Drivers   : 77
+ Total Blocks           : 12
+ Total Primitive Blocks : 9
+ Total Processes        : 65
+ Total Traceable Variables  : 16
+ Total Scalar Nets and Variables : 3850
+Total Line Count : 141
+
+ Total Simulation Time: 0.125 sec
+
+ Current Memory Usage: 1007.63 Meg
+
+Fri Feb 23 10:52:41 2018
+
