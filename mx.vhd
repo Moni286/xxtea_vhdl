@@ -74,6 +74,7 @@ signal sigma_2 : STD_LOGIC_VECTOR(31 downto 0);
 signal sigma_3 : STD_LOGIC_VECTOR(31 downto 0);
 
 
+-- input signals for MUX
 signal x0_in : STD_LOGIC_VECTOR(31 downto 0);
 signal x1_in : STD_LOGIC_VECTOR(31 downto 0);
 signal x2_in : STD_LOGIC_VECTOR(31 downto 0);
@@ -88,7 +89,7 @@ signal SIGMA0_in : STD_LOGIC_VECTOR(31 downto 0);
 signal SIGMA1_in : STD_LOGIC_VECTOR(31 downto 0);
 signal SIGMA2_in : STD_LOGIC_VECTOR(31 downto 0);
 signal SIGMA3_in : STD_LOGIC_VECTOR(31 downto 0);
-
+--
 
 begin
 	with dec select x0_in <=
@@ -146,10 +147,10 @@ begin
 		pl_reg2(127 downto 96) when others;
 
 	
-	mx_0 : mx_add PORT MAP(dec, x0_in, y0_in, state(127 downto 96), sum_0, key_0, sigma_0);
-	mx_1 : mx_add PORT MAP(dec, x1_in, y0_in, pl_reg0(95 downto 64), sum_1, key_1, sigma_1);
-	mx_2 : mx_add PORT MAP(dec, x2_in, y0_in, pl_reg1(63 downto 32), sum_2, key_2, sigma_2);
-	mx_3 : mx_add PORT MAP(dec, x3_in, y0_in, pl_reg2(31 downto 0), sum_3, key_3, sigma_3);
+	mx_0 : mx_add PORT MAP(dec, x0_in, y0_in, SIGMA0_in, sum_0, key_0, sigma_0);
+	mx_1 : mx_add PORT MAP(dec, x1_in, y1_in, SIGMA1_in, sum_1, key_1, sigma_1);
+	mx_2 : mx_add PORT MAP(dec, x2_in, y2_in, SIGMA2_in, sum_2, key_2, sigma_2);
+	mx_3 : mx_add PORT MAP(dec, x3_in, y3_in, SIGMA3_in, sum_3, key_3, sigma_3);
 	
 	next_state <= pl_reg3;
 	
@@ -163,11 +164,11 @@ begin
 					pl_reg1 <= pl_reg0(127 downto 96) & sigma_1 & pl_reg0(63 downto 0);
 					pl_reg2 <= pl_reg1(127 downto 64) & sigma_2 & pl_reg1(31 downto 0);
 					pl_reg3 <= pl_reg2(127 downto 32) & sigma_3;
-				elsif dec = '1' then
-					pl_reg0 <= state(127 downto 32) & sigma_3;
-					pl_reg2 <= pl_reg0(127 downto 64) & sigma_2 & pl_reg0(31 downto 0);
-					pl_reg2 <= pl_reg1(127 downto 96) & sigma_1 & pl_reg1(63 downto 0);
-					pl_reg3 <= sigma_0 & pl_reg2(95 downto 0);
+				else
+					pl_reg0 <= state(127 downto 32) & sigma_0;
+					pl_reg1 <= pl_reg0(127 downto 64) & sigma_1 & pl_reg0(31 downto 0);
+					pl_reg2 <= pl_reg1(127 downto 96) & sigma_2 & pl_reg1(63 downto 0);
+					pl_reg3 <= sigma_3 & pl_reg2(95 downto 0);
 				end if;
 			end if;
 		end if;

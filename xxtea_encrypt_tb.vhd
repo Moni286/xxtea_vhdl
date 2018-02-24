@@ -100,17 +100,22 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-		dec <= '0';
+		dec <= '1';
 		en <= '0';
 		w <= '0';
 		
 		key <= x"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-		pt <=  x"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+		--pt <=  x"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+		pt <=  x"B6A7D48C68DAC62644DD5B126301A4A0";
 		
       wait for clk_period*10;
 		
 		en <= '1';
 		w <= '0';
+		
+		
+		
+		
 
       wait;
    end process;
