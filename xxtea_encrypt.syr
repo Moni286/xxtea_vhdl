@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.72 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.72 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: xxtea_encrypt.prj
 
@@ -157,12 +157,11 @@ WARNING:Xst:647 - Input <start> is never used. This port will be preserved and l
     Found 32-bit register for signal <sum_2s>.
     Found 32-bit register for signal <sum_3s>.
     Found 32-bit register for signal <sum_0s>.
-    Found 32-bit adder for signal <sum_3s[31]_PWR_5_o_add_2_OUT> created at line 82.
-    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_4_OUT<31:0>> created at line 87.
+    Found 32-bit adder for signal <sum_3s[31]_PWR_5_o_add_0_OUT> created at line 82.
+    Found 32-bit subtractor for signal <GND_5_o_GND_5_o_sub_2_OUT<31:0>> created at line 87.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 128 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
 Unit <sums> synthesized.
 
 Synthesizing Unit <key_module>.
@@ -193,7 +192,7 @@ Synthesizing Unit <feistel_net>.
     Found 128-bit register for signal <pl_reg0>.
     Summary:
 	inferred 512 D-type flip-flop(s).
-	inferred 204 Multiplexer(s).
+	inferred 268 Multiplexer(s).
 Unit <feistel_net> synthesized.
 
 Synthesizing Unit <mx_add>.
@@ -233,10 +232,10 @@ Macro Statistics
  2-bit register                                        : 1
  32-bit register                                       : 4
  5-bit register                                        : 1
-# Multiplexers                                         : 210
- 1-bit 2-to-1 multiplexer                              : 192
+# Multiplexers                                         : 273
+ 1-bit 2-to-1 multiplexer                              : 256
  128-bit 2-to-1 multiplexer                            : 1
- 32-bit 2-to-1 multiplexer                             : 13
+ 32-bit 2-to-1 multiplexer                             : 12
  32-bit 4-to-1 multiplexer                             : 4
 # Xors                                                 : 20
  32-bit xor2                                           : 20
@@ -265,10 +264,10 @@ Macro Statistics
  5-bit up counter                                      : 1
 # Registers                                            : 641
  Flip-Flops                                            : 641
-# Multiplexers                                         : 365
+# Multiplexers                                         : 366
  1-bit 2-to-1 multiplexer                              : 352
  128-bit 2-to-1 multiplexer                            : 1
- 32-bit 2-to-1 multiplexer                             : 8
+ 32-bit 2-to-1 multiplexer                             : 9
  32-bit 4-to-1 multiplexer                             : 4
 # Xors                                                 : 20
  32-bit xor2                                           : 20
@@ -289,10 +288,12 @@ Optimizing unit <mx_add> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block xxtea_encrypt, actual ratio is 23.
-FlipFlop round_count/start_s has been replicated 8 time(s)
+Found area constraint ratio of 100 (+ 5) on block xxtea_encrypt, actual ratio is 24.
+FlipFlop round_count/start_s has been replicated 7 time(s)
 FlipFlop sums_comp/sum_0s_2 has been replicated 1 time(s)
-FlipFlop sums_comp/sum_0s_3 has been replicated 2 time(s)
+FlipFlop sums_comp/sum_0s_3 has been replicated 1 time(s)
+FlipFlop sums_comp/sum_1s_2 has been replicated 1 time(s)
+FlipFlop sums_comp/sum_1s_3 has been replicated 1 time(s)
 FlipFlop sums_comp/sum_2s_2 has been replicated 1 time(s)
 FlipFlop sums_comp/sum_2s_3 has been replicated 1 time(s)
 FlipFlop sums_comp/sum_3s_2 has been replicated 1 time(s)
@@ -328,22 +329,22 @@ Top Level Output File Name         : xxtea_encrypt.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2332
+# BELS                             : 2350
 #      GND                         : 1
 #      INV                         : 3
-#      LUT2                        : 116
-#      LUT3                        : 536
-#      LUT4                        : 150
-#      LUT5                        : 299
+#      LUT2                        : 82
+#      LUT3                        : 581
+#      LUT4                        : 160
+#      LUT5                        : 296
 #      LUT6                        : 408
 #      MUXCY                       : 403
 #      XORCY                       : 416
 # FlipFlops/Latches                : 663
-#      FD                          : 9
+#      FD                          : 8
 #      FDE                         : 512
-#      FDR                         : 118
+#      FDR                         : 117
 #      FDRE                        : 5
-#      FDS                         : 19
+#      FDS                         : 21
 
 Device utilization summary:
 ---------------------------
@@ -353,15 +354,15 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             663  out of  18224     3%  
- Number of Slice LUTs:                 1512  out of   9112    16%  
-    Number used as Logic:              1512  out of   9112    16%  
+ Number of Slice LUTs:                 1530  out of   9112    16%  
+    Number used as Logic:              1530  out of   9112    16%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1643
-   Number with an unused Flip Flop:     980  out of   1643    59%  
-   Number with an unused LUT:           131  out of   1643     7%  
-   Number of fully used LUT-FF pairs:   532  out of   1643    32%  
-   Number of unique control sets:         7
+ Number of LUT Flip Flop pairs used:   1656
+   Number with an unused Flip Flop:     993  out of   1656    59%  
+   Number with an unused LUT:           126  out of   1656     7%  
+   Number of fully used LUT-FF pairs:   537  out of   1656    32%  
+   Number of unique control sets:         5
 
 IO Utilization: 
  Number of IOs:                         425
@@ -402,7 +403,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 6.696ns (Maximum Frequency: 149.343MHz)
+   Minimum period: 6.760ns (Maximum Frequency: 147.923MHz)
    Minimum input arrival time before clock: 5.509ns
    Maximum output required time after clock: 0.525ns
    Maximum combinational path delay: No path found
@@ -413,10 +414,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 6.696ns (frequency: 149.343MHz)
-  Total number of paths / destination ports: 961954 / 670
+  Clock period: 6.760ns (frequency: 147.923MHz)
+  Total number of paths / destination ports: 1083844 / 670
 -------------------------------------------------------------------------
-Delay:               6.696ns (Levels of Logic = 32)
+Delay:               6.760ns (Levels of Logic = 37)
   Source:            round_count/start_s_2 (FF)
   Destination:       feistel/pl_reg0_127 (FF)
   Source Clock:      clk rising
@@ -426,10 +427,15 @@ Delay:               6.696ns (Levels of Logic = 32)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              14   0.525   1.127  round_count/start_s_2 (round_count/start_s_2)
-     LUT6:I5->O            3   0.254   1.042  feistel/Mmux_x0_in281 (feistel/x0_in<5>)
-     LUT6:I2->O            1   0.254   0.000  feistel/mx_0/Madd_a_lut<5> (feistel/mx_0/Madd_a_lut<5>)
-     MUXCY:S->O            1   0.215   0.000  feistel/mx_0/Madd_a_cy<5> (feistel/mx_0/Madd_a_cy<5>)
+     FD:C->Q              16   0.525   1.182  round_count/start_s_2 (round_count/start_s_2)
+     LUT6:I5->O            2   0.254   0.954  feistel/Mmux_x0_in110 (feistel/x0_in<0>)
+     LUT4:I1->O            1   0.235   0.000  feistel/mx_0/Madd_a_lut<0> (feistel/mx_0/Madd_a_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  feistel/mx_0/Madd_a_cy<0> (feistel/mx_0/Madd_a_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<1> (feistel/mx_0/Madd_a_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<2> (feistel/mx_0/Madd_a_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<3> (feistel/mx_0/Madd_a_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<4> (feistel/mx_0/Madd_a_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<5> (feistel/mx_0/Madd_a_cy<5>)
      MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<6> (feistel/mx_0/Madd_a_cy<6>)
      MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<7> (feistel/mx_0/Madd_a_cy<7>)
      MUXCY:CI->O           1   0.023   0.000  feistel/mx_0/Madd_a_cy<8> (feistel/mx_0/Madd_a_cy<8>)
@@ -461,12 +467,12 @@ Delay:               6.696ns (Levels of Logic = 32)
      LUT5:I4->O            1   0.254   0.000  feistel/Mmux_sigma_0[31]_state[31]_MUX_68_o11 (feistel/sigma_0[31]_state[31]_MUX_68_o)
      FDE:D                     0.074          feistel/pl_reg0_31
     ----------------------------------------
-    Total                      6.696ns (3.011ns logic, 3.685ns route)
-                                       (45.0% logic, 55.0% route)
+    Total                      6.760ns (3.108ns logic, 3.652ns route)
+                                       (46.0% logic, 54.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 674378 / 986
+  Total number of paths / destination ports: 728046 / 1017
 -------------------------------------------------------------------------
 Offset:              5.509ns (Levels of Logic = 37)
   Source:            pt<96> (PAD)
@@ -547,18 +553,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    6.696|         |         |         |
+clk            |    6.760|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.33 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.00 secs
  
 --> 
 
-Total memory usage is 299928 kilobytes
+Total memory usage is 299428 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)

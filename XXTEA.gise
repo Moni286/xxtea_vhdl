@@ -115,7 +115,7 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="xxtea_encrypt_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="xxtea_encrypt_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="xxtea_encrypt_summary.xml"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="xxtea_encrypt_tb_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="xxtea_encrypt_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="xxtea_encrypt_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="xxtea_encrypt_tb_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="xxtea_encrypt_tb_stx_beh.prj"/>
@@ -128,7 +128,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519462288" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1519462288">
+    <transform xil_pn:end_ts="1519487887" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1519487887">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="feistel_net_tb.vhd"/>
@@ -157,7 +157,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519462288" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1519462288">
+    <transform xil_pn:end_ts="1519487887" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1519487887">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="feistel_net_tb.vhd"/>
@@ -174,7 +174,7 @@
       <outfile xil_pn:name="xxtea_encrypt.vhd"/>
       <outfile xil_pn:name="xxtea_encrypt_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1519462299" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="181253960721153298" xil_pn:start_ts="1519462288">
+    <transform xil_pn:end_ts="1519487896" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="181253960721153298" xil_pn:start_ts="1519487887">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -184,7 +184,7 @@
       <outfile xil_pn:name="xxtea_encrypt_tb_beh.prj"/>
       <outfile xil_pn:name="xxtea_encrypt_tb_isim_beh.exe"/>
     </transform>
-    <transform xil_pn:end_ts="1519462299" xil_pn:in_ck="5222397953733314769" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8595956842512812320" xil_pn:start_ts="1519462299">
+    <transform xil_pn:end_ts="1519487897" xil_pn:in_ck="5222397953733314769" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8595956842512812320" xil_pn:start_ts="1519487896">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>
@@ -219,7 +219,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519461028" xil_pn:in_ck="-1110139706052841140" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1105113126092139487" xil_pn:start_ts="1519461010">
+    <transform xil_pn:end_ts="1519483323" xil_pn:in_ck="-1110139706052841140" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1105113126092139487" xil_pn:start_ts="1519483306">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -227,6 +227,7 @@
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="key_module.ngr"/>
       <outfile xil_pn:name="mx_add.ngr"/>
@@ -241,7 +242,6 @@
       <outfile xil_pn:name="xxtea_encrypt.stx"/>
       <outfile xil_pn:name="xxtea_encrypt.syr"/>
       <outfile xil_pn:name="xxtea_encrypt.xst"/>
-      <outfile xil_pn:name="xxtea_encrypt_tb_beh.prj"/>
       <outfile xil_pn:name="xxtea_encrypt_tb_stx_beh.prj"/>
       <outfile xil_pn:name="xxtea_encrypt_xst.xrpt"/>
     </transform>
