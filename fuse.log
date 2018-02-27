@@ -11,10 +11,10 @@ Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" int
 Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt.vhd" into library work
 Parsing VHDL file "C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt_tb.vhd" into library work
 Starting static elaboration
-WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 90: Statement might not cover all choices ; 'others' clause recommended
-WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 96: Statement might not cover all choices ; 'others' clause recommended
 WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 102: Statement might not cover all choices ; 'others' clause recommended
 WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 108: Statement might not cover all choices ; 'others' clause recommended
+WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 114: Statement might not cover all choices ; 'others' clause recommended
+WARNING:HDLCompiler:794 - "C:/Users/Lucas Futch/Documents/xxtea_vhdl/key_module.vhd" Line 120: Statement might not cover all choices ; 'others' clause recommended
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
@@ -29,5 +29,5 @@ Compiling architecture behavior of entity xxtea_encrypt_tb
 Time Resolution for simulation is 1ps.
 Compiled 16 VHDL Units
 Built simulation executable C:/Users/Lucas Futch/Documents/xxtea_vhdl/xxtea_encrypt_tb_isim_beh.exe
-Fuse Memory Usage: 35676 KB
-Fuse CPU Usage: 593 ms
+Fuse Memory Usage: 35692 KB
+Fuse CPU Usage: 609 ms

@@ -100,17 +100,15 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-		dec <= '0';
+		dec <= '1';
 		en <= '0';
 		w <= '0';
 		
 		key <= x"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-		pt <=  x"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
-		--pt <=  x"B6A7D48C68DAC62644DD5B126301A4A0";
-		--pt <=  x"D9F64F698F3A493231843D23AC02012C";
-		
-		--pt <= x"0102040810204080fffefcf8f0e0c080";
-		--pt <= x"c0a19f06ebb0d63925aa27f74cc6b2d0";
+		--pt <=  x"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+		pt <=  x"B6A7D48C68DAC62644DD5B126301A4A0"; -- 13
+		--pt <=  x"D9F64F698F3A493231843D23AC02012C"; -- 14
+		--pt <=  x"51063F6BAB93A976674BAEC068D90CA3"; -- 15
 		
       wait for clk_period*14;
 		

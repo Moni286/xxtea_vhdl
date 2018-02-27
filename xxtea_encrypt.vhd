@@ -64,6 +64,7 @@ COMPONENT key_module is
            sum_1 : in  STD_LOGIC_VECTOR (31 downto 0);
            sum_2 : in  STD_LOGIC_VECTOR (31 downto 0);
            sum_3 : in  STD_LOGIC_VECTOR (31 downto 0);
+			  dec : in STD_LOGIC;
            key_0 : out  STD_LOGIC_VECTOR (31 downto 0);
            key_1 : out  STD_LOGIC_VECTOR (31 downto 0);
            key_2 : out  STD_LOGIC_VECTOR (31 downto 0);
@@ -114,7 +115,7 @@ signal start : STD_LOGIC;
 begin
 
 	sums_comp : sums PORT MAP(clk, en, start, dec, sum_0, sum_1, sum_2, sum_3);
-	key_mod	 : key_module PORT MAP(clk, w, key, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3);
+	key_mod	 : key_module PORT MAP(clk, w, key, sum_0, sum_1, sum_2, sum_3, dec, key_0, key_1, key_2, key_3);
 	
 	feistel 	 : feistel_net PORT MAP(clk, en, feistel_input, sum_0, sum_1, sum_2, sum_3, key_0, key_1, key_2, key_3, dec, next_state);
 	

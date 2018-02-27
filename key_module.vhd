@@ -37,6 +37,7 @@ entity key_module is
            sum_1 : in  STD_LOGIC_VECTOR (31 downto 0);
            sum_2 : in  STD_LOGIC_VECTOR (31 downto 0);
            sum_3 : in  STD_LOGIC_VECTOR (31 downto 0);
+			  dec : in STD_LOGIC;
            key_0 : out  STD_LOGIC_VECTOR (31 downto 0);
            key_1 : out  STD_LOGIC_VECTOR (31 downto 0);
            key_2 : out  STD_LOGIC_VECTOR (31 downto 0);
@@ -79,13 +80,24 @@ signal index0 : STD_LOGIC_VECTOR(1 downto 0);
 signal index1 : STD_LOGIC_VECTOR(1 downto 0);
 signal index2 : STD_LOGIC_VECTOR(1 downto 0);
 signal index3 : STD_LOGIC_VECTOR(1 downto 0);
-
+ 
 begin
 	
-	index0 <= e0;
-	index1 <= e1(1) & NOT e1(0);
-	index2 <= NOT e2(1) & e2(0);
-	index3 <= NOT e3;
+	with dec select index0 <=
+		e0 when '0',
+		NOT e0 when others;
+	
+	with dec select index1 <= 
+		e1(1) & NOT e1(0) when '0',
+		NOT e1(1) & e1(0) when others;
+		
+	with dec select index2 <= 
+		NOT e2(1) & e2(0) when '0',
+		e2(1) & NOT e2(0) when others;
+	
+	with dec select index3 <= 
+		NOT e3 when '0',
+		e3 when others;
 	
 	with index0 select key_0 <=
 		key_in(31 downto 0) when "11",

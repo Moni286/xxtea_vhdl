@@ -75,10 +75,10 @@ signal sigma_3 : STD_LOGIC_VECTOR(31 downto 0);
 
 
 -- input signals for MUX
-signal x0_in : STD_LOGIC_VECTOR(31 downto 0);
-signal x1_in : STD_LOGIC_VECTOR(31 downto 0);
-signal x2_in : STD_LOGIC_VECTOR(31 downto 0);
-signal x3_in : STD_LOGIC_VECTOR(31 downto 0);
+signal z0_in : STD_LOGIC_VECTOR(31 downto 0);
+signal z1_in : STD_LOGIC_VECTOR(31 downto 0);
+signal z2_in : STD_LOGIC_VECTOR(31 downto 0);
+signal z3_in : STD_LOGIC_VECTOR(31 downto 0);
 
 signal y0_in : STD_LOGIC_VECTOR(31 downto 0);
 signal y1_in : STD_LOGIC_VECTOR(31 downto 0);
@@ -92,39 +92,39 @@ signal SIGMA3_in : STD_LOGIC_VECTOR(31 downto 0);
 --
 
 begin
-	with dec select x0_in <=
+	with dec select z0_in <=
 		state(31 downto 0) when '0',
-		state(127 downto 96) when others;
+		state(63 downto 32) when others;
 		
-	with dec select x1_in <=
+	with dec select z1_in <=
 		pl_reg0(127 downto 96) when '0',
-		pl_reg0(31 downto 0) when others;
+		pl_reg0(95 downto 64) when others;
 
-	with dec select x2_in <=
+	with dec select z2_in <=
 		pl_reg1(95 downto 64) when '0',
-		pl_reg1(63 downto 32) when others;
+		pl_reg1(127 downto 96) when others;
 		
-	with dec select x3_in <=
+	with dec select z3_in <=
 		pl_reg2(63 downto 32) when '0',
-		pl_reg2(95 downto 64) when others;
+		pl_reg2(31 downto 0) when others;
 		
 		
 		
 	with dec select y0_in <=
 		state(95 downto 64) when '0',
-		state(63 downto 32) when others;
+		state(127 downto 96) when others;
 		
 	with dec select y1_in <=
 		pl_reg0(63 downto 32) when '0',
-		pl_reg0(95 downto 64) when others;
+		pl_reg0(31 downto 0) when others;
 
 	with dec select y2_in <=
 		pl_reg1(31 downto 0) when '0',
-		pl_reg1(127 downto 96) when others;
+		pl_reg1(63 downto 32) when others;
 		
 	with dec select y3_in <=
 		pl_reg2(127 downto 96) when '0',
-		pl_reg2(31 downto 0) when others;
+		pl_reg2(95 downto 64) when others;
 		
 		
 		
@@ -147,10 +147,11 @@ begin
 		pl_reg2(127 downto 96) when others;
 
 	
-	mx_0 : mx_add PORT MAP(dec, x0_in, y0_in, SIGMA0_in, sum_0, key_0, sigma_0);
-	mx_1 : mx_add PORT MAP(dec, x1_in, y1_in, SIGMA1_in, sum_1, key_1, sigma_1);
-	mx_2 : mx_add PORT MAP(dec, x2_in, y2_in, SIGMA2_in, sum_2, key_2, sigma_2);
-	mx_3 : mx_add PORT MAP(dec, x3_in, y3_in, SIGMA3_in, sum_3, key_3, sigma_3);
+	mx_0 : mx_add PORT MAP(dec, z0_in, y0_in, SIGMA0_in, sum_0, key_0, sigma_0);
+	mx_1 : mx_add PORT MAP(dec, z1_in, y1_in, SIGMA1_in, sum_1, key_1, sigma_1);
+	mx_2 : mx_add PORT MAP(dec, z2_in, y2_in, SIGMA2_in, sum_2, key_2, sigma_2);
+	mx_3 : mx_add PORT MAP(dec, z3_in, y3_in, SIGMA3_in, sum_3, key_3, sigma_3);
+	
 	
 	next_state <= pl_reg3;
 	
