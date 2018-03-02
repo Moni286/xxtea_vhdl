@@ -122,6 +122,7 @@ begin
 	round_count : round_counter PORT MAP(clk, en, round_s, start);
 	
 	ct <= next_state;
+	
 	round <= round_s;
 	sum <= sum_0;
 	

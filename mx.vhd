@@ -91,6 +91,11 @@ signal SIGMA2_in : STD_LOGIC_VECTOR(31 downto 0);
 signal SIGMA3_in : STD_LOGIC_VECTOR(31 downto 0);
 --
 
+--
+-- 127	96|95		 64|63		32|31		0
+-- 	 0	  | 	 1		|		2	  |   3
+-- 
+ 
 begin
 	with dec select z0_in <=
 		state(31 downto 0) when '0',
@@ -152,8 +157,8 @@ begin
 	mx_2 : mx_add PORT MAP(dec, z2_in, y2_in, SIGMA2_in, sum_2, key_2, sigma_2);
 	mx_3 : mx_add PORT MAP(dec, z3_in, y3_in, SIGMA3_in, sum_3, key_3, sigma_3);
 	
-	
 	next_state <= pl_reg3;
+	
 	
 	PROCESS(clk)
 	

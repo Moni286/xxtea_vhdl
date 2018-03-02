@@ -99,17 +99,23 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
+      wait for 50 ns;	
 		dec <= '1';
+		wait for 50 ns;	
 		en <= '0';
 		w <= '0';
 		
 		key <= x"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-		--pt <=  x"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
-		pt <=  x"B6A7D48C68DAC62644DD5B126301A4A0"; -- 13
-		--pt <=  x"D9F64F698F3A493231843D23AC02012C"; -- 14
-		--pt <=  x"51063F6BAB93A976674BAEC068D90CA3"; -- 15
 		
+		if (dec = '0') then
+			pt <=  x"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
+		else
+			pt <=  x"D9F64F698F3A493231843D23AC02012C"; -- 14
+		end if;
+		
+		
+
+
       wait for clk_period*14;
 		
 		en <= '1';
