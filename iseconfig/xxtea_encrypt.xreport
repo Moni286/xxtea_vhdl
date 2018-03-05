@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-03-02T14:10:31</DateModified>
+  <DateModified>2018-03-05T11:55:31</DateModified>
   <ModuleName>xxtea_encrypt</ModuleName>
   <SummaryTimeStamp>2018-02-28T13:30:35</SummaryTimeStamp>
   <ImplementationReportsDirectory>C:/Users/Lucas Futch/Documents/xxtea_vhdl\</ImplementationReportsDirectory>

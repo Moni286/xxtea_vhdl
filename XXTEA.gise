@@ -33,6 +33,7 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="key_RAM.ngr"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="key_RAM_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="key_module.ngr"/>
@@ -127,9 +128,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519989996" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1519989996">
+    <transform xil_pn:end_ts="1520236576" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1520236576">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="feistel_net_tb.vhd"/>
       <outfile xil_pn:name="key_RAM.vhd"/>
       <outfile xil_pn:name="key_module.vhd"/>
@@ -156,9 +161,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1519990000" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1519990000">
+    <transform xil_pn:end_ts="1520236576" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1520236576">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="feistel_net_tb.vhd"/>
       <outfile xil_pn:name="key_RAM.vhd"/>
       <outfile xil_pn:name="key_module.vhd"/>
@@ -173,19 +183,29 @@
       <outfile xil_pn:name="xxtea_encrypt.vhd"/>
       <outfile xil_pn:name="xxtea_encrypt_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1519990010" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="181253960721153298" xil_pn:start_ts="1519990000">
+    <transform xil_pn:end_ts="1520236612" xil_pn:in_ck="866271507727784217" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="181253960721153298" xil_pn:start_ts="1520236576">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
       <outfile xil_pn:name="xxtea_encrypt_tb_beh.prj"/>
       <outfile xil_pn:name="xxtea_encrypt_tb_isim_beh.exe"/>
     </transform>
-    <transform xil_pn:end_ts="1519990010" xil_pn:in_ck="5222397953733314769" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8595956842512812320" xil_pn:start_ts="1519990010">
+    <transform xil_pn:end_ts="1520236612" xil_pn:in_ck="5222397953733314769" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8595956842512812320" xil_pn:start_ts="1520236612">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xxtea_encrypt_tb_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1518333660" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1518333660">

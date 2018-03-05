@@ -43,15 +43,9 @@ end sums;
 
 architecture Behavioral of sums is
 
--- 18 be1e08bb
--- 19 5c558274
--- 20 fa8cfc2d
--- 21 98c475e6
-
-
 constant DELTA : STD_LOGIC_VECTOR(31 downto 0) := x"9e3779b9";
+constant DELTA18 : STD_LOGIC_VECTOR(31 downto 0) := x"be1e08bb";
 constant DELTA19 : STD_LOGIC_VECTOR(31 downto 0) := x"5c558274";
-constant DELTA20 : STD_LOGIC_VECTOR(31 downto 0) := x"fa8cfc2d";
 
 
 signal sum_0s : STD_LOGIC_VECTOR(31 downto 0);

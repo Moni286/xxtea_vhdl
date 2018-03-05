@@ -99,9 +99,9 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 50 ns;	
+      wait for 30 ns;	
 		dec <= '1';
-		wait for 50 ns;	
+		wait for 30 ns;	
 		en <= '0';
 		w <= '0';
 		
@@ -110,7 +110,7 @@ BEGIN
 		if (dec = '0') then
 			pt <=  x"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 		else
-			pt <=  x"D9F64F698F3A493231843D23AC02012C"; -- 14
+			pt <=  x"b6a7d48c68dac62644dd5b126301a4a0";
 		end if;
 		
 		
